@@ -1,12 +1,22 @@
-import React from 'react';
+import React,{useState} from 'react';
 import NavBar from './home/Navbar';
 import Footer from './home/Footer';
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { loginUser, registeruser } from '../redux/actions/signin_';
+
 function SignUp() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const dispatch = useDispatch();
     const toggle = (e) => {
+
         console.log(e);
         e.preventDefault();
         console.log(e);
+
         if (e.target.innerHTML == 'Dont have an acount?') {
             document.getElementById('signin').style.display = "none";
             document.getElementById('signup').style.display = "block";
@@ -16,6 +26,18 @@ function SignUp() {
             document.getElementById('signin').style.display = "block";
         }
     }
+
+    const onSubmit = (e) => {
+        console.log(e);
+        e.preventDefault();
+        const data={
+            name,
+            email,
+            password
+        }
+     dispatch(loginUser(data));
+    }
+
     return (
         <div style={{ backgroundColor: "#f7f7f7" }}>
             <NavBar />
@@ -28,37 +50,35 @@ function SignUp() {
                         <div style={{ display: "none" }} id="signup" >
                             <div className="container p-2">
                                 <form>
-                                <div className="mb-3">
+                                    <div className="mb-3">
                                         <label for="exampleInputEmail1" className="form-label">UserName</label>
-                                        <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                        <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={e=>setName(e.target.value)}/>
                                     </div>
                                     <div className="mb-3">
                                         <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={e=>setEmail(e.target.value)} />
                                         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                                     </div>
                                     <div className="mb-3">
                                         <label for="exampleInputPassword1" className="form-label">Password</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" />
+                                        <input type="password" className="form-control" id="exampleInputPassword1" onChange={e=>setPassword(e.target.value)}/>
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Signup</button>
-                                    </form>
-                                    <Link onClick={toggle} className="ml-2 form-text" >Already, have an account?</Link>
-                                
+                                    <button onClick={onSubmit} type="submit" className="btn btn-primary">Signup</button>
+                                </form>
+                                <Link onClick={toggle} className="ml-2 form-text" >Already, have an account?</Link>
                             </div>
-
                         </div>
                         <div id="signin">
                             <div className="container p-2">
                                 <form>
                                     <div className="mb-3">
                                         <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={e=>setEmail(e.target.value)} />
                                         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                                     </div>
                                     <div className="mb-3">
                                         <label for="exampleInputPassword1" className="form-label">Password</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" />
+                                        <input type="password" className="form-control" id="exampleInputPassword1" onChange={e=>setPassword(e.target.value)} />
                                     </div>
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />

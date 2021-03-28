@@ -1,7 +1,7 @@
 import React from 'react';
-
-
+import {Link} from 'react-router-dom'
 const NavBar  = () => {
+    // const dispatch=useDispatch();
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,10 +11,10 @@ const NavBar  = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="#">Features</a>
-                        <a class="nav-item nav-link" href="#">Pricing</a>
-                        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <Link class="nav-item nav-link active" to="/">Home <span class="sr-only"></span></Link>
+                        <Link class="nav-item nav-link" to="/signup">Signup</Link>
+                        <Link class="nav-item nav-link" to="/signup">Signin</Link>
+                        <Link class="nav-item nav-link disabled" to="/" tabindex="-1" aria-disabled="true"></Link>
                     </div>
                 </div>
             </nav>
