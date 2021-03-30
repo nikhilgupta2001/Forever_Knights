@@ -39,12 +39,12 @@ function SignUp() {
     }
 
     return (
-        <div style={{ backgroundColor: "#f7f7f7" }}>
+        <div style={{ backgroundColor: "rgb(255,255,255,255)" }}>
             <NavBar />
             <div className="d-none d-sm-block container mt-4">
                 <div className="row">
                     <div data-aos="fade-right" className="col-md-6 col-sm-12">
-                        <img className=" " style={{ width: "100%", height: "100%" }} src="/Images/2.jpg" />
+                        <img className=" " style={{ width: "100%", height: "100%" }} src="/Images/add.jpg" />
                     </div>
                     <div data-aos="fade-left" className="col-md-6 col-sm-12">
                         <div style={{ display: "none" }} id="signup" >

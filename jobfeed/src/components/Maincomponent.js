@@ -14,6 +14,8 @@ function Main(){
         <Switch>
             <Route exact path='/Home'><Home/></Route>
             <Route exact path='/Signup'><SignUp/></Route>
+             
+        
             {/* <Redirect to="/Home"/> */}
         </Switch>
         </Router>
