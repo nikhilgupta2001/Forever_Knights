@@ -14,7 +14,8 @@ const NavBar  = () => {
                     <div class="navbar-nav">
                         <Link class="font-weight-bold  nav-item nav-link active "  to="/">Home <span class="sr-only"></span></Link>
                         <Link class="font-weight-bold nav-item nav-link" to="/signup">Signup</Link>
-                        <Link class="font-weight-bold nav-item nav-link" to="/signup">Signin</Link>
+                        <Link class="font-weight-bold nav-item nav-link" to="/signin">Signin</Link>
+                        <Link class="font-weight-bold nav-item nav-link" to="/adds">Signin</Link>
                         <Link class="font-weight-bold nav-item nav-link disabled" to="/" tabindex="-1" aria-disabled="true"></Link>
                     </div>
                 </div>

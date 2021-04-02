@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt=require('bcryptjs')
 const User = require('../models/user.js')
 router.post('/', (req, res) => {
-    console.log(req);
+
 
     const { UserName, email, password } = req.body
     if (!email || !password || !UserName) {
@@ -23,9 +23,11 @@ router.post('/', (req, res) => {
                         password: hashedpassword,
                        
                     })
+                    console.log(user);
                     user.save()
                         .then(user => {
-                            res.json({ message: "saved successfully" })
+                            console.log("BOOM!!!!!!!!!!!!!");
+                           res.json({ message: "saved successfully" })
                         })
                         .catch(err => {
                             console.log(err)

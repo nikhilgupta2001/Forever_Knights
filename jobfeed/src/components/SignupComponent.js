@@ -4,6 +4,7 @@ import Footer from './home/Footer';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { loginUser, registeruser } from '../redux/actions/signin_';
+// import M from 'materialize-css'
 
 function SignUp() {
     const [name, setName] = useState("");
@@ -27,11 +28,20 @@ function SignUp() {
         }
     }
 
-    const onSubmit = (e) => {
+    const onSubmitsignup = (e) => {
         console.log(e);
         e.preventDefault();
         const data={
             name,
+            email,
+            password
+        }
+     dispatch(registeruser(data));
+    }
+    const onSubmitsignin=(e)=>{
+        console.log(e);
+        e.preventDefault();
+        const data={
             email,
             password
         }
@@ -63,7 +73,7 @@ function SignUp() {
                                         <label for="exampleInputPassword1" className="form-label">Password</label>
                                         <input type="password" className="form-control" id="exampleInputPassword1" onChange={e=>setPassword(e.target.value)}/>
                                     </div>
-                                    <button onClick={onSubmit} type="submit" className="btn btn-primary">Signup</button>
+                                    <button onClick={onSubmitsignup} type="submit" className="btn btn-primary">Signup</button>
                                 </form>
                                 <Link onClick={toggle} className="ml-2 form-text" >Already, have an account?</Link>
                             </div>
@@ -84,7 +94,7 @@ function SignUp() {
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                         <label className="form-check-label" for="exampleCheck1">Check me out</label>
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Signin</button>
+                                    <button type="submit" onClick={onSubmitsignin} className="btn btn-primary">Signin</button>
                                 </form>
                             </div>
                             <Link onClick={toggle} className="ml-2 form-text" >Dont have an acount?</Link>

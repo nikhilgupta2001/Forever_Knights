@@ -10,6 +10,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
     "nodemon": "^2.0.7"
+    
   },
   "devDependencies": {},
   "scripts": {
