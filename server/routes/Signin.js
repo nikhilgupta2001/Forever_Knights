@@ -7,6 +7,8 @@ const User = require('../models/user.js');
 
 
 router.post('/',(req,res)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+
     console.log(req.body);
     const {email,password}=req.body
     if(!email || !password)

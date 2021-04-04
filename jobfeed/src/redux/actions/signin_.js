@@ -4,7 +4,9 @@ import * as actionTypes from '../constants';
 export const registeruser=(userData,history)=>dispatch=>{
     console.log(userData);
 
-    axios.post('/signup',userData)
+    axios.post('http://localhost:500/signup',userData,{
+        headers : {'Access-Control-Allow-Origin':'*'}
+    })
      .then(res=>history.push('/signin'))
     .catch(err=>
      dispatch({
@@ -16,7 +18,9 @@ export const registeruser=(userData,history)=>dispatch=>{
 
 export const loginUser=userData=>dispatch=>{
     console.log(userData);
-    axios.post('/signin',userData)
+    axios.post('http://localhost:500/signin',userData,{
+        headers : {'Access-Control-Allow-Origin':'*'}
+    })
      .then(res=>{
 
  const {token}=res.data;

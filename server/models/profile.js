@@ -1,29 +1,36 @@
-const mongoose =require('mongoose')
+const mongoose = require('mongoose')
 
 
-const profileSchema=new mongoose.Schema({
-    UserName:{
+const profileSchema = new mongoose.Schema({
+    userName: {
+        type: String,
+        //required: true,
+        unique: true
+    },
+    image: {
+        type:String
+
+    },
+    addcount: {
+        type: Number,
+
+    },
+    credits: {
+        type: Number
+    },
+    Interests: {
+        type: String,
+        required: true
+    },
+    Email: {
+        type: String,
+       // required: true
+    },
+    ImageUrl:{
         type:String,
-        required:true,
-        unique:true
-    },
-    image:{
-        type:file,
-        required:true
-    },
-    addcount:{
-        type:number,
-        required:true
-    },
-    credits:{
-        type:number,
-        required:true
-    },
-    interests :{
-        type:[],
-        required:true
+    
     }
 })
 
 
-module.exports = mongoose.model("Profile",profileSchema);
+module.exports = mongoose.model("Profile", profileSchema);
