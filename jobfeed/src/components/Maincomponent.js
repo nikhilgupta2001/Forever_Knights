@@ -1,7 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-
 import store from '../redux/store';
 import Adds from '../components/Adds'
 import Home from './homeComponent';
@@ -12,17 +11,18 @@ import Stats from './Profile/Stats'
 import Profile from './profileComponent'
 import BankDetails from './Profile/BankDetails'
 import CompanyStats from '../addscomponents/CompanyProfile/CompanyStats';
-import CompanyUploadVideo from '../addscomponents/CompanyProfile/CompansyUploadVideo';
+import CompanyUploadVideo from '../addscomponents/CompanyProfile/CompanyUploadVideo';
 import ComapanyPayments from '../addscomponents/CompanyProfile/ComapanyPaymentsLogs';
-import Companyprofile from '../addscomponents/Companyprofile';
+import Companyprofile from '../addscomponents/companyprofile';
 
 function Main(){
     return(
       <Provider store={store}>
              <Router>
         <Switch>
-            <Route exact path='/'><Home/></Route>
+            <Route exact path='/'><SignUp/></Route>
             <Route exact path='/Signup'><SignUp/></Route>
+            <Route exact path='/home'><Home/></Route>
             <Route exact path='/Profile'><Profile/></Route>
             <Route exact path="/Adds"><Adds/></Route>    
             <Route exact path="/Stats"><Stats /></Route>

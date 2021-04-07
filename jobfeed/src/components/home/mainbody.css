@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Kiwi+Maru:wght@300&display=swap');
+.fontA{
+    font-family: 'Kiwi Maru', serif;
+    z-index:100;
+}
+.fontB{
+    font-family: 'Dancing Script', cursive;
+    font-size: large;
+}

@@ -4,7 +4,7 @@ import MainBody from './home/Mainbody';
 // import Footer from './home/Footer';
 function Home(){
     return(
-        <div>
+        <div >
             <NavBar/>
             <MainBody/>
         </div>

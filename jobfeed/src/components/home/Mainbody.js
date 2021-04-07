@@ -1,4 +1,5 @@
 import React from 'react';
+import './mainbody.css';
 // import image from 'image.jpg';
 const MainBody = () => {
     return (
@@ -11,12 +12,18 @@ const MainBody = () => {
             {/* Mobile view */}
             {/* Visible only on sm*/}
             <div className="row " >
-                <div className="col-sm-12 col-md-9"  >
+                <div className="col-sm-12 col-md-9 " style={{Index:"0"}}  >
                     <img style={{ width: "100%", height: "110%", marginTop: "-12%" }} src="/Images/add2.jpg" />
 
                 </div>
-                <div className="col-sm-12 col-md-3">
-                    Get ready to feature your brands and products, let goooo.
+                <div className="col-sm-12 col-md-3 fontA">
+                    <h2>Branding has never been so easy and efficient</h2>
+                    <div className="row border-success">
+                       {/* <div className="col-md-6 col-sm-12 border-success">
+                          <span>Easy to feature your product and lure your target audience</span>
+                       </div> */}
+                       
+                    </div>
                 </div>
 
 
@@ -40,11 +47,17 @@ const MainBody = () => {
                 <div className="col-md-2">
                 </div>
                 <div className="d-flex col-sm-12 col-md-8 " >
-                    <div data-aos="flip-up" className=" bg-info text-dark card border border-primary shadow-lg " >
+                    <div data-aos="flip-up" className="fontB text-dark card  shadow-lg " >
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            <h5 className="card-title">The Need For Such a Platform...</h5>
+                            <p className="card-text">
+                                Branding or advertisement of product has allways been a task of importance for companies whether it be 
+                                a popular multinational or a startUp . Every companies expects the users to complete advertisement to lure 
+                                the target audience to their product . But due to recent development in technologies and indefinite infinite 
+                                novelty people have succumed to short attention span . This not only reduces the add play time but also hurts
+                                the companies marketing strategy.Our platform rewards every time a user watchs a full add making sure its a win win
+                                for both the parties .People use their liesure time to earn fortune while the company spread its product worldwide.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -54,29 +67,47 @@ const MainBody = () => {
             </div>
 
 <div className="container ">
-
+  
             {/* Adding Mid div after mid card */}
             <div className="row" style={{marginTop:"5%"}} >
             <div className="col-sm-12 col-md-6">
-                <img  data-aos="fade-right" src="/Images/MidImage.jpg" style={{width:"100%"}} />
+                {/* data-aos="fade-right" */}
+                <img   src="/Images/MidImage.jpg" style={{width:"100%"}} />
                 </div>
                 <div className="col-sm-12 col-md-6">
 
                       {/* ROW 1 */}
                     <div className="row">
-
-                        <div className="col-sm-12 col-md-6">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                        </div>
-                        <div className="col-sm-12 col-md-6">
-                            
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-
-                        </div>
+                    <div className="col-md-6 col-sm-12 border-success">
+                          <span>Easy for users to span along their liesure time</span>
+                       </div>
+                    </div>
+                    <div className="row border-success">
+                    <div className="col-md-6 col-sm-12 border-success">
+                         <span>Assured views for some strong public foundation</span> 
+                    </div>
+                    <div className="col-md-6 col-sm-12 border-success">
+                         <span>visualised status to ease up the montitoring process</span> 
+                    </div>
 
                     </div>
 
                     {/* ROW 2  */}
+                    <div className="row">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img class="d-block w-100" src="/Images/2.jpg" alt="First slide"/>
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100" src="/Images/2.jpg" alt="Second slide"/>
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100" src="/Images/2.jpg" alt="Third slide"/>
+                        </div>
+                    </div>
+</div>
+                    </div>
                     
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
@@ -113,14 +144,17 @@ const MainBody = () => {
                       {/* ROW 1 */}
                     <div className="row container">
 
-                        <div className="col-sm-12 col-md-6">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                        </div>
-                        <div className="col-sm-12 col-md-6">
-                            
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-
-                        </div>
+                    <div className="col-md-6 col-sm-12 border-success">
+                          <span>Easy for users to span along their liesure time</span>
+                       </div>
+                    </div>
+                    <div className="row border-success">
+                    <div className="col-md-6 col-sm-12 border-success">
+                         <span>Assured views for some strong public foundation</span> 
+                    </div>
+                    <div className="col-md-6 col-sm-12 border-success">
+                         <span>visualised status to ease up the montitoring process</span> 
+                    </div>
 
                     </div>
 
@@ -143,7 +177,8 @@ const MainBody = () => {
 
                 </div>
                 <div className="col-sm-12 col-md-6">
-                <img  data-aos="fade-left" src="/Images/Cheerful.jpg" style={{width:"100%"}} />
+                    {/*  data-aos="fade-left" */}
+                <img  src="/Images/Cheerful.jpg" style={{width:"100%"}} />
                 </div>
               
             </div>

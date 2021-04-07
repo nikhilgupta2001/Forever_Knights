@@ -2,11 +2,9 @@ const express = require('express');
 const router = express.Router();
 const bcrypt=require('bcryptjs')
 const User = require('../models/user.js')
-router.post('/', (req, res) => {
-
-  
-    const { UserName, email, password } = req.body
-    if (!email || !password || !UserName) {
+router.post('/', (req, res) => {  
+    const { UserName, email, password,usertype} = req.body
+    if (!email || !password || !UserName || !usertype) {
         return res.status(422).json({ error: "please add all the fields" })
     }
 
@@ -21,6 +19,7 @@ router.post('/', (req, res) => {
                     const user = new User({
                         UserName,
                         email,
+                        usertype,
                         password: hashedpassword,
                        
                     })

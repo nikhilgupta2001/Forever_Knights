@@ -28,7 +28,6 @@ const profileSchema = new mongoose.Schema({
     },
     ImageUrl:{
         type:String,
-    
     }
 })
 

@@ -11,7 +11,8 @@ router.post('/',(req,res)=>{
         userName,
         Email,
         Interests,
-        ImageUrl
+        ImageUrl,
+        
     })  
     profile.save().
     then(profile => res.json(profile))
