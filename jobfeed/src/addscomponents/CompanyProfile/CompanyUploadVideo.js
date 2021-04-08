@@ -1,19 +1,33 @@
-import { React, useState } from 'react';
+import { React, useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const CompanyUploadVideo = (history) => {
     // https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg
-    const [ImageUrl, setImageUrl] = useState("https://milemir.com/wp-content/uploads/2020/11/film-and-vid.jpg");
-    const [VideoUrl, setVideoUrl] = useState("video.mp4")
+    const [ImageUrl, setImageUrl] = useState("");
+    const [VideoUrl, setVideoUrl] = useState("")
     const [video, setVideo] = useState("");
     const [image, setImage] = useState("");
     const [writeup, setWriteup] = useState("")
+    useEffect(() => {
+        // console.log(ImageUrl);
+        // console.log(VideoUrl);
+        if (ImageUrl != "" && VideoUrl != "") {
+            const personData = {
+                ImageUrl,
+                VideoUrl,
+                writeup
+            }
+            axios.post('http://localhost:5000/companyProfile/savevideo', personData)
+                .then(res => res.json(personData))
+                .catch(err => { console.log("Server fucked you") }
+                );
+        }
+    }, [ImageUrl, VideoUrl])
     const postDetails = (e) => {
         e.preventDefault();
         const data = new FormData()
         data.append("file", image)
-
         data.append("upload_preset", "Adds_Upload")
         data.append("cloud_name", "addsapp")
         fetch("https://api.cloudinary.com/v1_1/addsapp/image/upload", {
@@ -22,8 +36,11 @@ const CompanyUploadVideo = (history) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                setImageUrl(data.secure_url);
+
+                // CHECK-3
+                // console.log(data.secure_url);
+                // END
+                setImageUrl(data.secure_url )
             })
             .catch(err => {
                 console.log(err);
@@ -42,29 +59,30 @@ const CompanyUploadVideo = (history) => {
         })
             .then(res => res.json())
             .then(viddata => {
-                console.log(viddata);
-                setVideoUrl(viddata.secure_url);
-                console.log(writeup);
-                const personData = {
-                    ImageUrl,
-                    VideoUrl,
-                    writeup
-                }
-                axios.post('http://localhost:5000/companyProfile/savevideo', personData)
-                    .then(res => history.push('/'))
-                    .catch(err => { console.log("Server fucked you") }
-                    );
+                // console.log(viddata);
+
+                //CHECK 2
+                // console.log(viddata.secure_url)
+
+                setVideoUrl(viddata.secure_url)
+
+                // console.log(writeup);
+
+                // CHECK
+                // console.log(ImageUrl)
+                // console.log(VideoUrl)
+
             })
             .catch(err => {
                 console.log(err);
             })
     }
     return (
-        <div style={{backgroundColor:""}}s>
-            <div  class="jumbotron jumbotron-fluid " style={{backgroundColor:"#b4aee8"}}>
+        <div style={{ backgroundColor: "" }} s>
+            <div class="jumbotron jumbotron-fluid " style={{ backgroundColor: "#b4aee8" }}>
                 <div class="container">
                     <h1 class="display-4 pt-4 ">Upload Video</h1>
-                    <p class="lead pt-4 " style={{margin:"20px",paddingLeft:"20px"}} >Upload the video and  thumbnails that you want to feature in your ADDs.</p>
+                    <p class="lead pt-4 " style={{ margin: "20px", paddingLeft: "20px" }} >Upload the video and  thumbnails that you want to feature in your ADDs.</p>
                 </div>
             </div>
 
@@ -74,7 +92,7 @@ const CompanyUploadVideo = (history) => {
                     <div className="col-md-7 col-sm-12 border-success">
                         <div className="row">
 
-                            {VideoUrl != "video.mp4" ? <div>
+                            {VideoUrl != "" ? <div>
 
                                 <video
                                     id="my-video"
@@ -101,38 +119,38 @@ const CompanyUploadVideo = (history) => {
 
 
                             </div>
-                                : <div> {VideoUrl == "video.mp4" ? <div>
-                                   
-                                    <img style={{ width: "300px", height: "300px" }} src={ImageUrl} />
-                                </div> 
-                                : 
-                                <div>
-                                    <div class="spinner-grow text-primary" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
-                                    <div class="spinner-grow text-secondary" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
-                                    <div class="spinner-grow text-success" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
-                                    <div class="spinner-grow text-danger" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
-                                    <div class="spinner-grow text-warning" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
-                                    <div class="spinner-grow text-info" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
-                                    <div class="spinner-grow text-light" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
-                                    <div class="spinner-grow text-dark" role="status">
-                                        <span class="sr-only m-5"></span>
-                                    </div>
+                                : <div> {VideoUrl == "" ? <div>
 
+                                    <img style={{ width: "300px", height: "300px" }} src={ImageUrl} />
                                 </div>
+                                    :
+                                    <div>
+                                        <div class="spinner-grow text-primary" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+                                        <div class="spinner-grow text-secondary" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+                                        <div class="spinner-grow text-success" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+                                        <div class="spinner-grow text-danger" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+                                        <div class="spinner-grow text-warning" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+                                        <div class="spinner-grow text-info" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+                                        <div class="spinner-grow text-light" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+                                        <div class="spinner-grow text-dark" role="status">
+                                            <span class="sr-only m-5"></span>
+                                        </div>
+
+                                    </div>
 
                                 }
                                 </div>

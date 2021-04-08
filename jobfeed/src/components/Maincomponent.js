@@ -15,11 +15,12 @@ import CompanyUploadVideo from '../addscomponents/CompanyProfile/CompanyUploadVi
 import ComapanyPayments from '../addscomponents/CompanyProfile/ComapanyPaymentsLogs';
 import Companyprofile from '../addscomponents/companyprofile';
 
+
 function Main(){
     return(
-      <Provider store={store}>
-             <Router>
-        <Switch>
+     
+            <Router forceRefresh={true}>
+            <Switch>
             <Route exact path='/'><SignUp/></Route>
             <Route exact path='/Signup'><SignUp/></Route>
             <Route exact path='/home'><Home/></Route>
@@ -39,7 +40,7 @@ function Main(){
             {/* <Redirect to="/"/> */}
         </Switch>
         </Router>
-        </Provider>
+        
     )
 }
 export default Main;
