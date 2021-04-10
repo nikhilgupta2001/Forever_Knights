@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import NavBar from './home/Navbar';
 import Footer from './home/Footer';
-import { Link } from "react-router-dom";
+import { Link,Redirect} from "react-router-dom";
 import { useDispatch,useSelector } from 'react-redux'
 import { loginUser, registeruser } from '../redux/actions/signin_';
 import history from '../redux/actions/history';
 // import M from 'materialize-css'
 function SignUp() {
+    const authToken = useSelector((state) => state.authReducer.isAuthenticated);
     const [UserName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [usertype, setUsertype] = useState("");
@@ -14,10 +15,13 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
     const abc=useSelector(state=>state.isAuthenticated);
-    // useEffect(() => {
-    //     setAuth(abc);
+    useEffect(() => {
+        // if(authToken==true)
+        // {
+            console.log("HELLO")
+        // <Redirect to="/home" />
         
-    // }, [])   
+    }, [authToken])   
     const toggle = (e) => {
         console.log(e);
         e.preventDefault();
@@ -66,7 +70,6 @@ function SignUp() {
             email,
             password
         }
-         dispatch(loginUser(data));
     }
   
     return (

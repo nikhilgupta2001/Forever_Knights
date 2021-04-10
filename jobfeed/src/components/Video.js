@@ -1,33 +1,35 @@
 import React from 'react';
 
 const Video = (url) => {
-    console.log(url );
+    console.log(url);
     return (
-        <div className="col-md-4 mt-2 ">
-            <video data-aos="zoom-in" style={{ width: "100%" }}
+       
+        <div className="card">
+            
+            <video data-aos="zoom-in" style={{width:"100%",objectFit: "fill"}}
                 id="my-video"
-                class="video-js"
+                className="video-js"
                 controls
                 preload="auto"
-                width="500px"
+                width=""
                 height="300px"
                 poster={url.url.thumbnailurl}
                 data-setup=" "
             >
                 <source src={url.url.videoUrl} type="video/mp4" />
                 <source src="MY_VIDEO.webm" type="video/webm" />
-                <p class="vjs-no-js">
-                    To view this video please enable JavaScript, and consider upgrading to a
-                    web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-                    >supports HTML5 video</a
-                    >
-                </p>
             </video>
+          
+            <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">{url.url.writeup}</p>
+            </div>
+        </div >
 
-        </div>
 
     )
 }
 
 export default Video;
+
+

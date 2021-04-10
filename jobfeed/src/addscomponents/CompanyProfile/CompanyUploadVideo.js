@@ -9,7 +9,7 @@ const CompanyUploadVideo = (history) => {
     const [video, setVideo] = useState("");
     const [image, setImage] = useState("");
     const [writeup, setWriteup] = useState("")
-    const [interest,setInterest]=useState("")
+    const [category,setCategory]=useState("")
     useEffect(() => {
         // console.log(ImageUrl);
         // console.log(VideoUrl);
@@ -18,6 +18,7 @@ const CompanyUploadVideo = (history) => {
                 ImageUrl,
                 VideoUrl,
                 writeup,
+                interest:category
             }
             axios.post('http://localhost:5000/companyProfile/savevideo', personData)
                 .then(res => res.json(personData))
@@ -37,10 +38,6 @@ const CompanyUploadVideo = (history) => {
         })
             .then(res => res.json())
             .then(data => {
-
-                // CHECK-3
-                // console.log(data.secure_url);
-                // END
                 setImageUrl(data.secure_url )
             })
             .catch(err => {
@@ -60,19 +57,7 @@ const CompanyUploadVideo = (history) => {
         })
             .then(res => res.json())
             .then(viddata => {
-                // console.log(viddata);
-
-                //CHECK 2
-                // console.log(viddata.secure_url)
-
                 setVideoUrl(viddata.secure_url)
-
-                // console.log(writeup);
-
-                // CHECK
-                // console.log(ImageUrl)
-                // console.log(VideoUrl)
-
             })
             .catch(err => {
                 console.log(err);
@@ -105,7 +90,6 @@ const CompanyUploadVideo = (history) => {
                                     poster={ImageUrl}
                                     data-setup="{}"
                                 >
-
                                     <source src={VideoUrl} type="video/mp4" />
                                     <source src="MY_VIDEO.webm" type="video/webm" />
                                     <p class="vjs-no-js">
@@ -184,6 +168,18 @@ const CompanyUploadVideo = (history) => {
                         <div class="form-group border border-dark">
                             <label for="exampleFormControlTextarea1">Example textarea</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => { setWriteup(e.target.value) }}></textarea>
+                        </div>
+                    </div>
+                    <div className="col-md-2">
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-2 col-sm-12">
+                    </div>
+                    <div style={{ width: "100%" }} className=" col-md-8 col-sm-12">
+                        <div class="form-group border border-dark">
+                            <label for="exampleFormControlTextarea1">Category</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => { setCategory(e.target.value) }}></textarea>
                         </div>
                     </div>
                     <div className="col-md-2">

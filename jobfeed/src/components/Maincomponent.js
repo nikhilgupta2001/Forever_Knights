@@ -27,7 +27,10 @@ function Main(){
             <Route exact path='/Signup'><SignUp/></Route>
       
            <Route exact path='/Profile'><Profile/></Route>
-            <PrivateRouting exact path="/home" component={Home}> </PrivateRouting>
+            {/* <PrivateRouting exact path="/home"> 
+            <Route path="/home/" component={Home} />
+            </PrivateRouting> */}
+            <Route exact path="/home"><Home /></Route>
             <Route exact path='/Profile'><Profile/></Route>
             <Route exact path="/Adds"><Adds/></Route>    
             <Route exact path="/Stats"><Stats /></Route>

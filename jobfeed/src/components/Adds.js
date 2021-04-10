@@ -16,30 +16,25 @@ const Adds = () => {
    useEffect(()=>{
        dispatch(getalladds());
    },[dispatch])
-    
     return (
         <div>
             <NavBar />
-            <div style={{ backgroundColor: `rgba(159,67,181)` }} >
-                <div className="contianer"  style={{padding:"10px"}}>
-                    <div className="container">
-                <div className="row " style={{width:"100%"}}>
+            <div style={{ backgroundColor: "#eeebdd"}}>
+                
+                <div className="row">
                 {
                     loading? (
                     <Spinner/>
-                    ):(
-                           
-                            getAdds[0].map((e)=>{
-                                // console.log(e.video[0].videoUrl);
-                                return(
-                                    <Video url={e.video[0]}/>
-                                )
-                            })
+                    ):( getAdds[0].map((e)=>{
+                        return(
+                            <div className=" col-md-4 col-sm-12 mx-auto ">
+                            <Video url={e.video[0]}/> 
+                            </div>
+                        )
+                    })
                            
                     )
                  }
-                </div>
-                </div>
                 </div>
             </div>
         </div>

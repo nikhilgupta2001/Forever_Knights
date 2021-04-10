@@ -6,12 +6,12 @@ const Video = (url) => {
     return (
         <div className="row">
             <div className="col-md-4">
-                <video style={{ width: "100%" }}
+                <video style={{width:"100%"}}
                     id="my-video"
                     class="video-js"
                     controls
                     preload="auto"
-                    width="500px"
+                    width="100%"
                     height="200px"
                     // poster="https://lyricsraag.com/wp-content/uploads/2021/03/Tujhe-Bhoolna-Toh-Chaaha-Jubin-lyrics-English.jpg"
                     data-setup=" "
