@@ -4,8 +4,9 @@ import Footer from './home/Footer';
 import { Link } from "react-router-dom";
 import { useDispatch,useSelector } from 'react-redux'
 import { loginUser, registeruser } from '../redux/actions/signin_';
+import history from '../redux/actions/history';
 // import M from 'materialize-css'
-function SignUp(history) {
+function SignUp() {
     const [UserName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [usertype, setUsertype] = useState("");
@@ -55,7 +56,7 @@ function SignUp(history) {
             password
         }
         console.log(data);
-         dispatch(registeruser(data));
+         dispatch(registeruser(data))
     }
 
     const onSubmitsignin = (e) => {

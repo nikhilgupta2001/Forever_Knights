@@ -6,7 +6,10 @@ const videoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    video: [{
+    interest:{
+        type:String
+    },
+   video:[{
         thumbnailurl: {
             type: String,
             required: true
@@ -22,14 +25,15 @@ const videoSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "User"
     },
+ 
     views: {
         type: String,
     },
-
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+   
 })
 
 module.exports = mongoose.model("Video", videoSchema);

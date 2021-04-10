@@ -6,13 +6,14 @@ const Video=require('../models/video');
 
 router.post('/savevideo',(req,res)=>{
     console.log(req.body);
-   const {VideoUrl,ImageUrl,writeup}=req.body;
+   const {VideoUrl,ImageUrl,writeup,interest}=req.body;
    var videoUnique={
        videoUrl:VideoUrl,
-       thumbnailurl:ImageUrl   
+       thumbnailurl:ImageUrl,
    }
    const video=new Video({
        writeup:writeup,
+       interest
    })
 
    video.video.push(videoUnique);

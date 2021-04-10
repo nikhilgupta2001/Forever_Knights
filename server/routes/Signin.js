@@ -4,6 +4,7 @@ const jwt=require('jsonwebtoken')
 const bcrypt=require('bcryptjs')
 const {JWT_SECRET}=require('../keys');
 const User = require('../models/user.js');
+const Profile = require('../models/profile.js');
 
 
 router.post('/',(req,res)=>{
@@ -24,9 +25,22 @@ router.post('/',(req,res)=>{
         .then(doMatch=>{
             if(doMatch){
                 const token =jwt.sign({_id:savedUser._id},JWT_SECRET)
+                console.log(token);
                // res.json({token}) 
-                res.cookie('token',{token});
-                res.json({"hi":"bye"});
+                // res.cookie('token',{token});
+                console.log(savedUser);
+                var usertype=  savedUser.usertype;
+                Profile.findOne({Email:email})
+                .then((response)=>{
+                    const data={
+                        response,
+                        token,
+                        usertype
+                    }
+                    res.json(data);
+                })
+                .catch((err)=>console.log(err))
+               // res.end(token);
             }
             else{
                 return res.status(422).json({error:"invalid password"})

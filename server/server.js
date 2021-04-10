@@ -6,6 +6,7 @@ const SignUp = require('./routes/SignUp');
 const Signin = require('./routes/Signin');
 const Companyprofile=require('./routes/Companyprofile')
 const Profile=require('./routes/Profile');
+const Adds=require('./routes/Adds')
 const {MONGOURI}=require('./keys');
 require('./models/user')
 require('./models/profile')
@@ -21,6 +22,8 @@ app.use('/signin',Signin);
 app.use('/profile',Profile);
 
 app.use('/companyProfile',Companyprofile);
+
+app.use('/adds',Adds);
 
 mongoose.connect(MONGOURI,{
     useNewUrlParser:true,

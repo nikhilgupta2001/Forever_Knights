@@ -5,8 +5,7 @@ const profileSchema = new mongoose.Schema({
     userName: {
         type: String,
         //required: true,
-        unique: true
-    },
+     },
     image: {
         type:String
 
@@ -25,7 +24,8 @@ const profileSchema = new mongoose.Schema({
     Email: {
         type: String,
        // required: true
-    },
+    }
+    ,
     ImageUrl:{
         type:String,
     }

@@ -6,10 +6,10 @@ const Profile = require('../models/profile.js');
 router.post('/',(req,res)=>{
     res.header('Access-Control-Allow-Origin', '*');
     console.log(req.body);
-    const {userName,Email,Interests,ImageUrl}=req.body;
+    const {name,email,Interests,ImageUrl}=req.body;
     const profile=new Profile({
-        userName,
-        Email,
+        userName:name,
+        Email:email,
         Interests,
         ImageUrl,
         

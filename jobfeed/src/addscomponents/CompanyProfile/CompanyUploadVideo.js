@@ -9,6 +9,7 @@ const CompanyUploadVideo = (history) => {
     const [video, setVideo] = useState("");
     const [image, setImage] = useState("");
     const [writeup, setWriteup] = useState("")
+    const [interest,setInterest]=useState("")
     useEffect(() => {
         // console.log(ImageUrl);
         // console.log(VideoUrl);
@@ -16,7 +17,7 @@ const CompanyUploadVideo = (history) => {
             const personData = {
                 ImageUrl,
                 VideoUrl,
-                writeup
+                writeup,
             }
             axios.post('http://localhost:5000/companyProfile/savevideo', personData)
                 .then(res => res.json(personData))
