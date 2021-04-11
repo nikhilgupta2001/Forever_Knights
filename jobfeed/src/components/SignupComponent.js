@@ -76,7 +76,7 @@ function SignUp() {
     
            <div style={{padding:"5.5% 0.5%",backgroundImage:`url("https://i.pinimg.com/474x/6f/78/82/6f788269f05c97b48355ae297d304787.jpg")`}}>
             <div style={{ backgroundColor: "rgb(255,255,255,255)" ,marginRight:"5%",marginLeft:"5%"}} className="shadow-lg " >
-                <div className=" container " style={{padding:"45px"}}>
+                <div className=" container-fluid " style={{padding:"45px"}}>
                     <div className="row pd-8">
                         <div data-aos="fade-right" className="col-md-6 col-sm-12">
                             <img className=" " style={{ width: "100%", height: "100%" }} src="/Images/add.jpg" />
@@ -112,7 +112,7 @@ function SignUp() {
                                 </div>
                             </div>
                             <div id="signin">
-                                <div className="container p-2">
+                                <div className="container-fluid p-2">
                                     <form>
                                         <div className="mb-3">
                                             <label for="exampleInputEmail1" className="form-label">Email address</label>

@@ -10,8 +10,8 @@ const NavBar  = () => {
     
        ({usertype} == "company") ? <div> 
         <div>
-        <div className="">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{opacity:"0.4"}}>
+  
+            <nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-lg navbar-light bg-light" style={{opacity:"0.4"}}>
                 <a class="navbar-brand m-1" href="/home">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@ const NavBar  = () => {
                 </div>
             </nav>
         </div>
-        </div> 
+       
 
 
         </div> :

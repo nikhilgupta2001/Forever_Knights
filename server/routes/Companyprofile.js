@@ -12,14 +12,14 @@ router.post('/savevideo',(req,res)=>{
        thumbnailurl:ImageUrl,
    }
    const video=new Video({
-       writeup:writeup,
+       writeup,
        interest
    })
 
    video.video.push(videoUnique);
 
    video.save().then((data)=>{
-       res.json({data})
+       res.json(data)
    }).
    catch((err)=>
    console.log(err)

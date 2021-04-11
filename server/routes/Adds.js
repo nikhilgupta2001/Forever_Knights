@@ -14,6 +14,7 @@ router.post('/', (req, res) => {
             res.json({message:"No Adds as per your interest"});
         }
         else{
+            console.log(adds);
             res.json(adds);
         }
     }).catch((err)=>{

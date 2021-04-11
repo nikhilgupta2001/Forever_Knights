@@ -23,9 +23,9 @@ const image1 =
 
 
 const items = [
-    <img src={image1} onDragStart={handleDragStart} />,
-    <img src={image1} onDragStart={handleDragStart} />,
-    <img src={image1} onDragStart={handleDragStart} />,
+    <img src={image1} onDragStart={handleDragStart} autoPlay={true} />,
+    <img src={image1} onDragStart={handleDragStart} autoPlay={true} />,
+    <img src={image1} onDragStart={handleDragStart} autoPlay={true} />,
 ];
 
 const styles = {
