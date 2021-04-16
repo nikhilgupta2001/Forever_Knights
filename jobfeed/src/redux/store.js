@@ -2,6 +2,8 @@ import {createStore,combineReducers,applyMiddleware,compose} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducer/reducer';
 import getdatareducer from './reducer/getdatareducer'
+import profilereducer from './reducer/getprofilereducer'
+
 const middleware=[thunk];
 
 //[]-our reducers ,()-empty objects
@@ -9,7 +11,8 @@ const middleware=[thunk];
 
 const reducer=combineReducers({
   getAdds:getdatareducer,
-  authReducer:rootReducer
+  authReducer:rootReducer,
+  getProfile:profilereducer
 })
 const initalState={};
 

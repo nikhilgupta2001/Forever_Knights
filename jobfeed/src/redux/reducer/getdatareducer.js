@@ -22,12 +22,6 @@ export default function(state=initialState , action ){
                 ...state,
                 addItems:state.addItems.filter((x)=> x.product !==action.payload),
             };
-        // case LOADING:
-        //         return{
-        //             ...state,
-        //             loading : false,
-                    
-        //         }
 
         default:
             return state;

@@ -5,6 +5,7 @@ import { Link,Redirect} from "react-router-dom";
 import { useDispatch,useSelector } from 'react-redux'
 import { loginUser, registeruser } from '../redux/actions/signin_';
 import history from '../redux/actions/history';
+import Spinner from './Spinner';
 // import M from 'materialize-css'
 function SignUp() {
     const authToken = useSelector((state) => state.authReducer.isAuthenticated);
@@ -14,12 +15,9 @@ function SignUp() {
     const [isAuth,setAuth]=useState(false)
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
-    const abc=useSelector(state=>state.isAuthenticated);
     useEffect(() => {
-        // if(authToken==true)
-        // {
-            console.log("HELLO")
-        // <Redirect to="/home" />
+     
+
         
     }, [authToken])   
     const toggle = (e) => {
@@ -66,14 +64,18 @@ function SignUp() {
     const onSubmitsignin = (e) => {
         console.log(e);
         e.preventDefault();
+        // console.log(email);
         const data = {
             email,
             password
         }
+        dispatch(loginUser(data))
     }
   
     return (
-    
+        <div>
+       
+           
            <div style={{padding:"5.5% 0.5%",backgroundImage:`url("https://i.pinimg.com/474x/6f/78/82/6f788269f05c97b48355ae297d304787.jpg")`}}>
             <div style={{ backgroundColor: "rgb(255,255,255,255)" ,marginRight:"5%",marginLeft:"5%"}} className="shadow-lg " >
                 <div className=" container-fluid " style={{padding:"45px"}}>
@@ -138,6 +140,8 @@ function SignUp() {
             </div>
         </div>
         
+  
+        </div>
     )
 }
 

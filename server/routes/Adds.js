@@ -4,9 +4,9 @@ const router = express.Router();
 const Video = require('../models/video');
 
 router.post('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const {interest} = req.body;
-    console.log(interest);
+    // console.log(interest);
     Video.find({interest}).
     then((adds) => {
         if(!adds)
@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
             res.json({message:"No Adds as per your interest"});
         }
         else{
-            console.log(adds);
+            // console.log(adds);
             res.json(adds);
         }
     }).catch((err)=>{

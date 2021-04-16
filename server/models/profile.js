@@ -12,10 +12,10 @@ const profileSchema = new mongoose.Schema({
     },
     addcount: {
         type: Number,
-
     },
     credits: {
-        type: Number
+        type: Number,
+        default:0
     },
     Interests: {
         type: String,
@@ -23,13 +23,24 @@ const profileSchema = new mongoose.Schema({
     },
     Email: {
         type: String,
-       // required: true
     }
     ,
     ImageUrl:{
         type:String,
-    }
+    },
+    videoWatched:[
+         
+    ]
 })
 
 
 module.exports = mongoose.model("Profile", profileSchema);
+
+
+
+// videoWatched:{
+//     type:Array,
+//     default:[],
+    
+// }
+        //   date: { type: Date, default: Date.now },

@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
                         password: hashedpassword,    
                     })
                     console.log(user);
+                    
                     user.save()
                         .then(user => {
                             console.log(user);

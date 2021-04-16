@@ -40,8 +40,8 @@ function Main(){
             {/* COMPANY PROFILE */}
             <Route exact path="/getaddsfeatured"><Companyprofile /></Route>
             <Route exact path="/Companyprofile"><Companyprofile/></Route>
-            <Route exact path="/CompanyStats"><CompanyStats /></Route>
-            <Route exact path="/CompanyUploadVideo"><CompanyUploadVideo/></Route>
+            <Route exact path="/companystats"><CompanyStats /></Route>
+            <Route exact path="/companyuploadvideo"><CompanyUploadVideo/></Route>
             <Route exact path="/ComapanyPayments"><ComapanyPayments/></Route>
             {/* <Redirect to="/"/> */}
         </Switch>

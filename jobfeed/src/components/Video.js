@@ -1,82 +1,91 @@
-import {React,useState,Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import { React, useState, Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import "../../node_modules/video-react/dist/video-react.css";
-import { Player, ControlBar, PlayToggle, VolumeMenuButton,BigPlayButton,LoadingSpinner } from 'video-react';
+import { Player, ControlBar, PlayToggle, VolumeMenuButton, BigPlayButton, LoadingSpinner } from 'video-react';
 import axios from 'axios';
-
-class Video extends Component
-{
-    constructor(props)
-    {
+var counter=true;
+var y = "";
+class Video extends Component {
+    constructor(props) {
         super(props)
     }
-    state={
-       player:'',
-       timer:'',
+    state = {
+        player: '',
+        timer: '',
     }
     componentDidMount() {
         // subscribe state change
-        this.player.subscribeToStateChange(this.handleStateChange.bind(this)); 
-      }
-      
-      handleStateChange(state, prevState) {
+        this.player.subscribeToStateChange(this.handleStateChange.bind(this));  
+         counter = true;    
+    }
+
+    handleStateChange(state, prevState) {
         // copy player state to this component's state
         this.setState({
-          player: state,
-          currentTime: state.currentTime
-        },()=>{
+            player: state,
+            currentTime: state.currentTime
+        }, () => {
             // console.log(this.state.player) ;
-        this.state.timer=this.state.player.currentTime
-        
-        if(this.state.player.currentTime==this.state.player.duration)
-        {
-            const currentUrl=(this.state.player.currentSrc);
-            axios.post('http://localhost:5000/profile/credit',{
-                "url":`${currentUrl}`
-            })
-            .then((res)=>{
-                console.log(res);
-            })
-            .catch((err)=>{console.log(err)})
-        }
-        });  
-      }
-    render(){
-        // const { player } = this.player.getState();    
-        return(       
-        <div className="">
-            <Player data-aos="zoom-in" 
-             ref={(player) => { this.player = player }}
+            this.state.timer = this.state.player.currentTime
+            // console.log("HELLO", " video.js")
+             
+            console.log(this.state.player.currentTime);
+            console.log(this.state.player.duration);
+            if ((this.state.player.currentTime == this.state.player.duration && y != this.state.player.currentSrc) ) {
                
-                style={{width:"100%",objectFit: "fill"}}
-                poster={this.props.url.video[0].thumbnailurl}
-                src={this.props.url.video[0].videoUrl}
-            >
-                <ControlBar autoHide={false} disableDefaultControls={true}>
-                    <VolumeMenuButton />
-                    <PlayToggle />
-                    <LoadingSpinner />
-                </ControlBar>
+                const currentUrl = (this.state.player.currentSrc);
+                y = currentUrl;
+                var todayDate = new Date().toISOString().slice(0, 10);
+                console.log(y);
+                // console.log(todayDate);
+                axios.post('http://localhost:5000/profile/credit', {
+                    "url": `${currentUrl}`,
+                    "userName": window.localStorage.getItem("userName"),
+                    "date":todayDate
+                })
+                    .then((res) => {
+                        console.log(res);
+                    })
+                    .catch((err) => { console.log(err) })
+               counter=false;
+            }
+        });
 
-                <BigPlayButton position="center" />
 
-            </Player>
-            {/* {console.log(this.player)} */}
+    }
+    render() {
+        // console.log(this.handleStateChange);
+        // console.log(counter);
+        // console.log(y);
+        return (
             <div className="">
-                <h5 className="">Card title</h5>
-                {/* <span class="badge badge-light">{Math.floor(this.state.timer)}</span> */}
-                <button type="button" class="btn">
+                <Player data-aos="zoom-in"
+                    ref={(player) => { this.player = player }}
 
-                <span class="badge badge-primary  ">{Math.floor(this.state.timer) + "/" + Math.floor(this.state.player.duration)}</span>
-                
-                </button>
-                <p className="card-text">{this.props.url.writeup}</p>
-            </div>
-        </div >
-        ) 
-} 
+                    style={{ width: "100%", objectFit: "fill" }}
+                    poster={this.props.url.thumbnailurl}
+                    src={this.props.url.videoUrl}
+                >
+                    <ControlBar autoHide={false} disableDefaultControls={""}>
+                        <VolumeMenuButton />
+                        <PlayToggle />
+                        <LoadingSpinner />
+                    </ControlBar>
+
+                    <BigPlayButton position="center" />
+                </Player>
+                <div className="">
+                    <h5 className="">Card title</h5>
+                    <button type="button" class="btn">
+                        <span class="badge badge-primary  ">{Math.floor(this.state.timer) + "/" + Math.floor(this.state.player.duration)}</span>
+                    </button>
+                    <p className="">{this.props.url.writeup}</p>
+                </div>
+            </div >
+        )
+    }
 }
-export default  (withRouter(Video));
+export default (withRouter(Video));
 
 
 

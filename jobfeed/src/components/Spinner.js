@@ -6,7 +6,7 @@ import React, { Component } from 'react';
     render() {
         return (
             <div className="col-md-4 offset-4">
-               <img style={{height:'100px',margin:'auto',display:'block'}} src="spinner.gif" alt="Laoding..."/>
+               <img style={{height:'100%',margin:'auto',display:'block'}} src="spinner.gif" alt="Laoding..."/>
             </div>
         )
     }

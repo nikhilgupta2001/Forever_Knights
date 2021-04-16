@@ -18,8 +18,9 @@ export const registeruser = (userData) => {
                     type: SIGNED_IN,
                     payload: response
                 })
-                history.push('/home');
+                // history.push('/home');
                 //    window.location.reload(true);
+                toast.success("Login to proceed")
             })
             .catch(err => {
                 toast.error(err);
@@ -30,31 +31,48 @@ export const registeruser = (userData) => {
 
 export const loginUser = userData => {
     return dispatch => {
-        // console.log(userData);
+        console.log(userData);
         axios.post('http://localhost:5000/signin', userData)
             .then(res => {
-
-                const email = res.data.response.Email;
-                const imageurl = res.data.response.ImageUrl;
-                const Interests = res.data.response.Interests;
-                const userName = res.data.response.userName;
+                const usertype = res.data.usertype
+                if(usertype=='User')
+                {
+                    const email = res.data.response.Email;
+                    const imageurl = res.data.response.ImageUrl;
+                    const Interests = res.data.response.Interests;
+                    const userName = res.data.response.userName;
+                    const token = res.data.token;
+                    const userid=res.data.id;
+                    const usertype = res.data.usertype
+                    localStorage.setItem('jwtToken', token);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('imageurl', imageurl);
+                    localStorage.setItem('Interests', Interests);
+                    localStorage.setItem('userName', userName)
+                    localStorage.setItem('usertype', usertype)
+                    localStorage.setItem('id',userid)
+                }
+                else{
+                    const email=res.data.savedUser.email;
+                    const userName=res.data.savedUser.UserName;
+                    const userid=res.data.savedUser._id;
+                    const token = res.data.token;
+                     localStorage.setItem('jwtToken',token);
+                     localStorage.setItem('email', email);
+                     localStorage.setItem('userName', userName)
+                     localStorage.setItem('usertype', usertype)
+                     localStorage.setItem('id',userid)
+                }
                 console.log(res);
 
-                const token = res.data.token;
-                const usertype = res.data.usertype
-                localStorage.setItem('jwtToken', token);
-                localStorage.setItem('email', email);
-                localStorage.setItem('imageurl', imageurl);
-                localStorage.setItem('Interests', Interests);
-                localStorage.setItem('userName', userName)
-                localStorage.setItem('usertype', usertype)
-                //[object object] error ask siddesh bhau
-                // history.push('/home');
-                // window.location.reload(true);
+                //[object object] error ask siddesh bhau          
                 dispatch({
                     type: SIGNED_IN,
-                    payload: token
+                    payload: res
                 });
+                history.push('/home');
+                window.location.reload(true);
+
             })
             .catch(err => toast("problem in login")
             )

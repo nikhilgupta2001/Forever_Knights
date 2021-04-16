@@ -16,9 +16,9 @@ const Adds = () => {
     var arr = [];
 
     const [modalShow, setModalShow] = useState(false);
-    const [url,seturl] = useState("");
+    const [url, seturl] = useState("");
 
-    function modalCall(e){
+    function modalCall(e) {
         console.log(e);
         setModalShow(true);
         seturl(e);
@@ -27,7 +27,7 @@ const Adds = () => {
     const getAdds = useSelector(state => state.getAdds.adds);
     const loading = useSelector(state => state.getAdds.loading)
     const image1 =
-        "https://t4.ftcdn.net/jpg/03/59/98/31/360_F_359983118_OUEqWt9VPKM2rysrc0S9AeQ2vP1VrkZ6.jpg";
+        "https://wallpapercave.com/wp/wp3422169.jpg";
     useEffect(() => {
         dispatch(getalladds());
     }, [dispatch])
@@ -37,34 +37,35 @@ const Adds = () => {
             <Parallax bgImage={image1} strength={100}>
                 <div >
 
-                    <div className="row">
+                    <div className="row" style={{ justifyContent: "center" }}>
                         {
                             loading ? (
                                 <Spinner />
                             ) : (getAdds[0].map((e) => {
-                                // console.log(e);
+                                console.log(e);
                                 return (
-                                  
-                                        <div className=" col-md-6 col-sm-12 card ">
-                                            <div className="card-image">
-                                            <img src={e.video[0].thumbnailurl} style={{ maxHeight: "300px", objectFit: "fill" }} onClick={() => modalCall(e)} />
-                                            </div>
+                                    <div className=" col-md-5 col-sm-12 card m-2" style={{ backgroundColor: "#ffd3b4" }}>
+                                        <div className="card-image m-1"  >
+                                            <img src={e.thumbnailurl} onClick={() => modalCall(e)} />
                                         </div>
+                                        <div className="card-body">
+                                            <p>{e.writeup}</p>
+                                        </div>
+                                    </div>
                                 )
                             })
                             )
                         }
-                        <div>
-                        {/* {console.log(e)} */}
-                        <MyVerticallyCenteredModal
-                            show={modalShow}
-                            onHide={() => setModalShow(false)}
-                            e={url}
-                        />
-            </div>
+
                     </div>
                 </div>
             </Parallax>
+                {/* {console.log(e)} */}
+                <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    e={url}
+                />
         </div>
     )
 }
@@ -79,10 +80,6 @@ function MyVerticallyCenteredModal(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            {/* <Modal.Header>
-                <Button onClick={props.onHide}>Close</Button>
-            </Modal.Header> */}
-
             <Modal.Body>
                 {/* {console.log(props.e)} */}
                 <Video url={props.e} />
@@ -92,3 +89,4 @@ function MyVerticallyCenteredModal(props) {
 }
 
 export default Adds;
+
