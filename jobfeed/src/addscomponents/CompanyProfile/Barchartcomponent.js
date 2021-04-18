@@ -2,35 +2,23 @@ import axios from 'axios';
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,Line,ComposedChart} from 'recharts';
 
-var data = [
+var op = [
 
 ];
+
 var arr = [];
 export default class Example extends PureComponent {
   static demoUrl = 'https://codesandbox.io/s/bar-chart-has-no-padding-jphoc';
-  componentDidMount()
-  {
-    const id=localStorage.getItem('id');
-    const details={
-        id
-    }
-    axios.post('http://localhost:5000/companyProfile/getcompanyvideos',details).then((res)=>{
-      console.log(res.data);
-      arr = res.data;
-      console.log(arr);
-      var arrfinal =[];
-      for(let i=0;i<arr.length;i++)
-      {
-          arrfinal.push({"name":arr[i].writeup,"views":arr[i].views})
-      }
-      console.log(arrfinal);
-      data = arrfinal;
-      console.log(data);
-     
-  })
-  }
-
+constructor(props)
+{
+  super(props);
+}
   render() {
+    op = this.props.array;
+    console.log(op);
+    op.reverse();
+     var data = op.slice(0,7)
+    console.log(data)
     
     return (
       <ResponsiveContainer width="100%" height="100%">

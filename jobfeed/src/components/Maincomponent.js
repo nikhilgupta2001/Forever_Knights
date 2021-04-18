@@ -30,6 +30,7 @@ function Main(){
             {/* <PrivateRouting exact path="/home"> 
             <Route path="/home/" component={Home} />
             </PrivateRouting> */}
+      
             <Route exact path="/home"><Home /></Route>
             <Route exact path='/Profile'><Profile/></Route>
             <Route exact path="/Adds"><Adds/></Route>    

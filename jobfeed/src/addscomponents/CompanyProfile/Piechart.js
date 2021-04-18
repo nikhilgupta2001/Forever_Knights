@@ -34,7 +34,7 @@ export default class Example extends PureComponent {
 
   render() {
     console.log(this.props);
-    data1 = [{ name: "views", value:this.props.views },{ name: "required", value:this.props.req }]
+    data1 = [{ name: "views", value:this.props.views },{ name: "viewsLeft", value: this.props.req - this.props.views }]
     return (
       <ResponsiveContainer width="100%" height="100%">
         <PieChart style={{height:"100px",width:"100px"}}>

@@ -6,6 +6,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { loginUser, registeruser } from '../redux/actions/signin_';
 import history from '../redux/actions/history';
 import Spinner from './Spinner';
+import Toast from './Profile/Toast'
 // import M from 'materialize-css'
 function SignUp() {
     const authToken = useSelector((state) => state.authReducer.isAuthenticated);
@@ -74,8 +75,7 @@ function SignUp() {
   
     return (
         <div>
-       
-           
+            {/* {<Toast message="hello"/>} */}
            <div style={{padding:"5.5% 0.5%",backgroundImage:`url("https://i.pinimg.com/474x/6f/78/82/6f788269f05c97b48355ae297d304787.jpg")`}}>
             <div style={{ backgroundColor: "rgb(255,255,255,255)" ,marginRight:"5%",marginLeft:"5%"}} className="shadow-lg " >
                 <div className=" container-fluid " style={{padding:"45px"}}>

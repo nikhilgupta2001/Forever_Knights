@@ -1,143 +1,140 @@
 import React from 'react'
-
+import {Link} from "react-router-dom"
 export default function Footer() {
-    return (
-        <div>
-            <div>
-            {/* <!-- Footer --> */}
-<footer class="bg-light text-center text-lg-start">
-  {/* <!-- Grid container --> */}
-  <div class="container p-4">
-    {/* <!--Grid row--> */}
-    <div class="row">
-      {/* <!--Grid column--> */}
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Footer Content</h5>
+  return (
+ <div className="font">
+    
+   
+    {/* // < !--Footer -- > */}
+    <footer class="page-footer font-small  pt-4" style={{backgroundColor:"#93329e",text:"white"}}>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-          voluptatem veniam, est atque cumque eum delectus sint!
-        </p>
+      {/* <!-- Footer Links --> */}
+      <div class="container-fluid text-center text-md-left" >
+
+        {/* <!-- Grid row --> */}
+        <div class="row"  >
+
+          {/* <!-- Grid column --> */}
+          <div class="col-md-6 mt-md-0 mt-3">
+
+            {/* <!-- Content --> */}
+            <h5 class="text-uppercase"><b>Footer Content</b></h5>
+            <p>Here you can use rows and columns to organize your footer content.</p>
+
+          </div>
+           
+
+
+          {/* <!-- Grid column --> */}
+
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+            {/* <!-- Grid column --> */}
+          <div class="col-md-3 mb-md-0 mb-3">
+
+              {/* <!-- Links --> */}
+            {/* <h5 class="text-uppercase">Links</h5> */}
+
+              <ul  class="list-unstyled font-weight-bold text-light">
+                <li>
+                  <Link class=" text-light " to="#!"><b>Home</b></Link>
+                </li>
+                <li>
+                  <Link class=" text-light" to="#!"><b>Contact Us</b></Link>
+                </li>
+                <li>
+                  <Link class=" text-light" to="#!"><b>Our Team</b></Link>
+                </li>
+                <li>
+                  <Link  class=" text-light" to="#!"><b>Feedback</b></Link>
+                </li>
+              </ul>
+
+            </div>
+            {/* <!-- Grid column --> */}
+
+       
+          <div class="col-md-3 mb-md-0 mb-3">
+
+              {/* <!-- Links --> */}
+            {/* <h5 class="text-uppercase">Links</h5> */}
+
+              <ul class="list-unstyled">
+                <li>
+                  <Link class=" text-light"  to="/home">Faqs</Link>
+                </li>
+                <li>
+                  <Link class=" text-light"  to="/about"><b>Link 1</b></Link>
+                </li>
+                <li>
+                  <Link class=" text-light"  to="#!"><b>Link2</b></Link>
+                </li>
+                <li>
+                  <Link class=" text-light"  to="#!"><b>Link 3</b></Link>
+                </li>
+              </ul>
+
+            </div>
+            {/* <!-- Grid column --> */}
+    
+        </div>
+          {/* <!-- Grid row --> */}
+
       </div>
-      {/* <!--Grid column--> */}
-
-      {/* <!--Grid column--> */}
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Links</h5>
-
-        <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#!" class="text-dark">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 4</a>
-          </li>
-        </ul>
-      </div>
-      {/* <!--Grid column-->
-
-      <!--Grid column--> */}
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!" class="text-dark">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 4</a>
-          </li>
-        </ul>
-      </div>
-      {/* <!--Grid column--> */}
-    </div>
-    {/* <!--Grid row--> */}
-  </div>
-  {/* <!-- Grid container --> */}
+        {/* <!-- Footer Links --> */}
 
 
-</footer>
-{/* <!-- Footer --> */}
-{/* Socail */}
-            
-            <footer class="text-center text-white" style={{backgroundColor: "#f1f1f1"}}>
-  {/* <!-- Grid container --> */}
-  <div class="container pt-4">
-    {/* <!-- Section: Social media --> */}
-    <section class="mb-4">
-      {/* <!-- Facebook --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"> 
-        <i class="fab fa-facebook-f"></i>
+
+
+
+{/* Social Media */}
+
+
+
+<div class="">
+
+    {/* <!-- Social buttons --> */}
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mr-1">
+          <i class="fab fa-facebook-f"> </i>
         </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mr-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mr-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mr-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mr-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    {/* <!-- Social buttons --> */}
 
-      {/* <!-- Twitter --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark">
-          <i class="fab fa-twitter"></i ></a>
-
-      {/* <!-- Google --> */} 
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-google"></i></a>
-
-      {/* <!-- Instagram --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-instagram"></i></a>
-
-      {/* <!-- Linkedin --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-linkedin"></i></a>
-      {/* <!-- Github --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-github"></i></a>
-    </section>
-    {/* <!-- Section: Social media --> */}
   </div>
-  {/* <!-- Grid container --> */}
 
-  {/* <!-- Copyright --> */}
-  <div class="text-center text-dark p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
-    © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  {/* <!-- Copyright --> */}
-</footer>
+{/* END */}
+
+
+      {/* <!-- Copyright --> */}
+      <div class="footer-copyright text-center py-3 justify-content-center" style={{backgroundColor:"white"}}>© 2020 Copyright:
+        <a href="https://mdbootstrap.com/" class="" style={{color:"#93329e"}} > Made With Love ❤️ by Team Forever Knights </a>
         </div>
-        </div>
-    )
+
+    </footer>
+   
+      </div>
+  )
 }

@@ -4,10 +4,15 @@ import Chart from './profilebarchart';
 import Profilenav from './Profilenav';
 import CreditChart from './creditchart';
 import  {useSelector,} from 'react-redux';
+// import {useSpring, animated} from 'react-spring';
+import {useTransition, animated,useSpring} from 'react-spring'
 import axios from 'axios';
+import Footer from '../home/Footer';
 const Stats  = () => {
+    
     const Barchart=useSelector(state=>state.getProfile.profile.data.videoWatched);
     const credit=useSelector(state=>state.getProfile.profile.data.credits)
+    const props = useSpring({ number: credit, from: { number: 0 } })
     
    
     return (
@@ -22,11 +27,17 @@ const Stats  = () => {
                 <Chart info={Barchart}/>
                 </div>
                 <div className="row text-center fontA" style={{height:"250px"}}>
-                  <h1>Credit : {credit}</h1>
+                    <div className="col-md-6 col-sm-6">
+                  <img src="/Images/Rupee.jpg" style={{maxWidth:"15rem",maxHeight:"15rem"}}/>
+                  </div>
+                  <div className="col-md-6 col-sm-6 ">
+                  <h1><animated.span>{props.number}</animated.span></h1>
+                </div>
                 </div>
             </div>
          
         </div>
+        <Footer />
         </div>
     )
 };

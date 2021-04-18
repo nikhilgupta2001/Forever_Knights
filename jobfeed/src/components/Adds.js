@@ -44,7 +44,7 @@ const Adds = () => {
                             ) : (getAdds[0].map((e) => {
                                 console.log(e);
                                 return (
-                                    <div className=" col-md-5 col-sm-12 card m-2" style={{ backgroundColor: "#ffd3b4" }}>
+                                    <div className=" col-md-5 col-sm-12 card m-2" style={{ backgroundColor: "linear-gradient(#fb3640, #ff8303, #8ab6d6)" }}>
                                         <div className="card-image m-1"  >
                                             <img src={e.thumbnailurl} onClick={() => modalCall(e)} />
                                         </div>

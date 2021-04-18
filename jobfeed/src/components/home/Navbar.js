@@ -1,82 +1,140 @@
-import React from 'react';
-import {Link} from 'react-router-dom'
-const NavBar  = () => {
-    // const dispatch=useDispatch();
-    const  usertype = localStorage.getItem('usertype');
-    const token=localStorage.getItem('token')
+
+// export default NavBar;
+import React, { useState } from 'react';
+
+import { Link, Redirect } from 'react-router-dom'
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    NavbarText
+} from 'reactstrap';
+
+const NavBar = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
+    const usertype = localStorage.getItem('usertype');
+    const token = localStorage.getItem('token')
+    const [login, setlogin] = useState(true)
+    const [antifix,setantifix]=useState(false);
     console.log(usertype);
-    
+    const logout = () => {
+        console.log("HELLO");
+        localStorage.clear();
+        setlogin(false);
+    }
     var x;
-    if(usertype=="Company"){
-        x=true;
+    if (usertype == "Company") {
+        x = true;
     }
-    else{
-        x=false;
+    else {
+        x = false;
     }
+    
+    var init = 750;
+    
+    window.addEventListener('scroll', (event) => {
+       
+        if(window.pageYOffset>window.innerHeight && init < window.innerheight )
+        {
+               setantifix(true) ;
+               init = window.pageYoffset
+             
+            
+        }
+        else if(window.pageYOffset<window.innerHeight && init > window.innerheight){
+                setantifix(false);
+                init = window.pageYoffset;
+        }
+      });
+
+
+     
     return (
-        
+
         <div>
-       { x ? (
-        <div > 
-       
-        <div >
-  
-            <nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-lg navbar-light bg-light" style={{opacity:"0.4",backgroundColor:"#fbe0c4"}} >
-                <Link class="navbar-brand m-1" to="/home">Navbar</Link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <Link class="font-weight-bold  nav-item nav-link active " to="/home">Home <span class="sr-only"></span></Link>
-                        
-                        <Link class="font-weight-bold nav-item nav-link" to="/signup">Profile</Link>
-                        
-                        <Link class="font-weight-bold nav-item nav-link" to="/getaddsfeatured">Live Adds</Link>
-                        <Link class="font-weight-bold nav-item nav-link" to="/companystats" >Stats</Link>
-                        <Link class="font-weight-bold nav-item nav-link" to="/companyuploadvideo" >Upload_Video</Link>
-                        {/* <Link class="font-weight-bold nav-item nav-link disabled" to="/" tabindex="-1" aria-disabled="true"></Link> */}
-                    </div>
-                </div>
-            </nav>
+            { x ? ( 
+                 
+                // <Navbarfirst antifix={antifix}/>
+                // <Navbar light expand="md" style={{ opacity: "0.6", zIndex: "100", backgroundColor: "#93329e" ,position:"fixed"}}></Navbar>
+                    
+                 <Navbar light expand="md" style={{ opacity: "0.6", backgroundColor: "#93329e" }}>
+                
+
+            
+                  <NavbarBrand ><a style={{ textDecoration: "none", color: "lead" }} href="/home">Home</a></NavbarBrand>
+                    <NavbarToggler style={{ text: "black", backgroundColor: "black" }} onClick={toggle} />
+                    <Collapse isOpen={isOpen} navbar>
+                        <Nav className="mr-auto" navbar>
+                            <NavItem>
+                                <NavLink ><a style={{ text: "black" }} href="/"><b>SignIn</b></a></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink><a style={{ text: "black" }} href="/getaddsfeatured"><b>Live Adds</b></a>
+
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink ><a style={{ text: "black" }} href="/companystats"><b>Stats</b></a></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink ><a style={{ text: "black" }} href="/companyuploadvideo"><b>Upload Video</b></a></NavLink>
+                            </NavItem>
+                            
+                            <NavItem>
+                            {
+                                login ? (<a className="waves-effect waves-light btn  active " style={{ position: "absolute", right: "10px", bottom: "20px", }} onClick={logout}>Logout</a>
+                                ) : <div><Redirect to="/"></Redirect></div>
+                            }
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+
+                // --------------------
+                )
+                :
+
+                (
+                    <Navbar light expand="md" style={{ opacity: "0.6", backgroundColor: "#93329e"}}>
+                        <NavbarBrand href="/home" style={{ text: "black" }}>Home</NavbarBrand>
+                        <NavbarToggler onClick={toggle} />
+                        <Collapse isOpen={isOpen} navbar>
+                            <Nav className="mr-auto" navbar>
+                            <NavItem>
+                                <NavLink ><a style={{ text: "black" }} href="/"><b>SignIn</b></a></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink ><a style={{ text: "black" }} href="/Adds"><b>See Adds</b></a></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink ><a style={{ text: "black" }} href="/profile"><b>My Profile</b></a></NavLink>
+            
+                            </NavItem>
+                            {
+                                login ? (<a className="waves-effect waves-light float-right btn-small font-weight-bold nav-item  active" style={{ position: "absolute", right: "10px", bottom: "20px", }} onClick={logout}>Logout</a>
+                                ) : <div><Redirect to="/"></Redirect></div>
+                            }
+                            </Nav>
+
+                        </Collapse>
+                    </Navbar>)
+            }
         </div>
-       
-        </div> ):
-        (
-         <div>
 
-<div>
-        <div className="" >
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{opacity:"0.4"}}>
-                <a class="navbar-brand m-1" href="/home">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        {/* <Link class="font-weight-bold  nav-item nav-link active "  to="/home">Home <span class="sr-only"></span></Link> */}
-                        <Link class="font-weight-bold nav-item nav-link active" to="/signup">Signup</Link>
-                        <Link class="font-weight-bold nav-item nav-link active" to="/signin">Signin</Link>
-                        <Link class="font-weight-bold nav-item nav-link active" to="/Adds">See Adds</Link>
-                        <Link class="font-weight-bold nav-item nav-link active" to="/profile">My Profile</Link>
-
-                        {/* <Link class="font-weight-bold nav-item nav-link disabled" to="/" tabindex="-1" aria-disabled="true"></Link> */}
-                    </div>
-                </div>
-            </nav>
-        </div>
-        </div>
-        </div>   
-
-
-        )  
-      }
-      </div>
     )
-};
+}
+export default NavBar;
 
 
-
-export default NavBar ;
 
 
