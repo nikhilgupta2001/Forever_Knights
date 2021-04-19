@@ -239,5 +239,8 @@ If you'd like to contribute, please fork the repository and make changes as you'
 
 
 #### Developed by : ForeverKnights
+## Siddhesh Sathe  -> (https://github.com/mrSidSat)
+## Nikhil Gupta  -> (https://github.com/nikhilgupta2001)
+## Sarvesh Khandelwala -> (https://github.com/SARVESHKHANDELWAL)
 
 
