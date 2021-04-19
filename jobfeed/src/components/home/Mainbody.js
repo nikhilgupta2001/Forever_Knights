@@ -47,25 +47,6 @@ const MainBody = () => {
 
     const ref = useRef([])
     const [items, setitems] = useState([])
-    //   const transitions = useTransition(items, null, {
-    //     from: { opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)', color: '#8fa5b6' },
-    //     enter: [
-    //       { opacity: 1, height: 80, innerHeight: 80 },
-    //       { transform: 'perspective(600px) rotateX(180deg)', color: '#28d79f' },
-    //       { transform: 'perspective(600px) rotateX(0deg)' },
-    //     ],
-    //     leave: [{ color: '#c23369' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
-    //     update: { color: '#28b4d7' },
-    //   })
-
-    //   const reset = useCallback(() => {
-    //     ref.current.map(clearTimeout)
-    //     ref.current = []
-    //     set([])
-    //     ref.current.push(setTimeout(() => setitems(['Apples', 'Oranges', 'Kiwis']), 2000))
-    //     ref.current.push(setTimeout(() => setitems(['Apples', 'Kiwis']), 5000))
-    //     ref.current.push(setTimeout(() => setitems(['Apples', 'Bananas', 'Kiwis']), 8000))
-    //   }, [])
 
     useEffect(() => { }, [])
 
@@ -179,22 +160,22 @@ const MainBody = () => {
                             {/* ROW 1 */}
                             <div className="card mt-5 shadow-none border-0">
                                 <div className="row container-fluid ">
-                                    <div className="col-md-12 col-sm-12 border-success fontD">
-                                        <span><h3>Easy for users to span along their liesure time</h3></span>
+                                    <div className="col-md-12 col-sm-12 border-success fontB">
+                                        <span><h3>Company needs to have such a platform..</h3></span>
                                     </div>
                                 </div>
                                 <div className="row container-fluid border-success mt-5 card-body shadow" data-aos="zoom-in">
                                     <div className="col-md-6 col-sm-6 border-success fontB">
-                                        <span><h5>Assured views for some strong public foundation</h5></span>
+                                        <span><h5>To ensure ample publicity for their specific tailored project</h5></span>
                                     </div>
                                     <div className="col-md-6 col-sm-6 border-success fontB">
-                                        <span><h5>visualised status to ease up the montitoring </h5></span>
+                                        <span><h5>To ensure huge viewer base to satify the very motive</h5></span>
                                     </div>
                                     <div className="col-md-6 col-sm-6 border-success fontB mt-2">
-                                        <span><h5>visualised status to ease up the montitoring </h5></span>
+                                        <span><h5>Easy monitoring of adds status and views</h5></span>
                                     </div>
                                     <div className="col-md-6 col-sm-6 border-success fontB mt-2">
-                                        <span><h5>visualised status to ease up the montitoring </h5></span>
+                                        <span><h5>Ensured returns for some certain good relationship</h5></span>
                                     </div>
                                 </div>
                             </div>

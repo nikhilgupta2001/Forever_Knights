@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom"
 export default function Footer() {
   return (
+    
  <div className="font">
     
    
@@ -12,14 +13,39 @@ export default function Footer() {
       <div class="container-fluid text-center text-md-left" >
 
         {/* <!-- Grid row --> */}
-        <div class="row"  >
+        <div class="row" >
 
           {/* <!-- Grid column --> */}
           <div class="col-md-6 mt-md-0 mt-3">
 
             {/* <!-- Content --> */}
-            <h5 class="text-uppercase"><b>Footer Content</b></h5>
-            <p>Here you can use rows and columns to organize your footer content.</p>
+          
+          
+           
+               <img src="/Images/logofinal.jpeg"/>
+            
+
+          
+              <h5 class="text-uppercase"><b>Forever Knights</b></h5>
+           
+
+           
+
+            {/* Added */}
+            <div className="row">
+              <div className="col-md-2 ">
+                </div>
+                <div className="col-md-8 col-sm-12">
+                
+            <p>Passion has always been a part and parcel of any success story .We been here 
+              to prove its very truth </p>
+
+              </div>
+              <div className="col-md-2 ">
+                </div>
+             </div>
+
+               {/* End */}
 
           </div>
            
@@ -30,54 +56,65 @@ export default function Footer() {
           <hr class="clearfix w-100 d-md-none pb-3" />
 
             {/* <!-- Grid column --> */}
-          <div class="col-md-3 mb-md-0 mb-3">
+           
+            <div class="col-md-6 ">
+              <div className="row mt-4 ">
+                {/* For spacing */}
+                  <div className="col-md-2">
+                    </div>
+          <div class="col-md-4 mr-2 ml-2">
+
+              {/* <!-- Links --> */}
+            {/* <h5 class="text-uppercase">Links</h5> */}
+              <ul style={{fontSize:"1.2rem"}} class="list-unstyled font-weight-bold text-light ">
+                <li class="p-2">
+                  <Link class=" text-light" to="/home"><b>Home</b></Link>
+                </li>
+                <li class="p-2">
+                  <Link class=" text-light " to="/contact"><b>Contact Us</b></Link>
+                </li>
+                <li class="p-2">
+                  <Link class=" text-light " to="/ourteam"><b>Our Team</b></Link>
+                </li>
+                <li class="p-2">
+                  <Link  class=" text-light " to="/feedback"><b>Feedback</b></Link>
+                </li>
+              </ul>
+        
+            </div>
+            {/* <!-- Grid column --> */}
+
+          
+          <div class="col-md-4   mr-2 ml-2">
 
               {/* <!-- Links --> */}
             {/* <h5 class="text-uppercase">Links</h5> */}
 
-              <ul  class="list-unstyled font-weight-bold text-light">
-                <li>
-                  <Link class=" text-light " to="#!"><b>Home</b></Link>
+              <ul style={{fontSize:"1.2rem"}} class="list-unstyled">
+                <li className="p-2">
+                  <Link class="  text-light"  to="/home"><b>Faqs</b></Link>
                 </li>
-                <li>
-                  <Link class=" text-light" to="#!"><b>Contact Us</b></Link>
+                <li  className="p-2">
+                  <Link class=" text-light "  to="/about"><b>Feedback</b></Link>
                 </li>
-                <li>
-                  <Link class=" text-light" to="#!"><b>Our Team</b></Link>
+                <li  className="p-2">
+                  <Link class=" text-light "  to="#!"><b>Join us</b></Link>
                 </li>
-                <li>
-                  <Link  class=" text-light" to="#!"><b>Feedback</b></Link>
+                <li  className="p-2">
+                  <Link class=" text-light "  to="#!"><b>Gift us a cup of coffee</b></Link>
                 </li>
               </ul>
 
             </div>
             {/* <!-- Grid column --> */}
-
-       
-          <div class="col-md-3 mb-md-0 mb-3">
-
-              {/* <!-- Links --> */}
-            {/* <h5 class="text-uppercase">Links</h5> */}
-
-              <ul class="list-unstyled">
-                <li>
-                  <Link class=" text-light"  to="/home">Faqs</Link>
-                </li>
-                <li>
-                  <Link class=" text-light"  to="/about"><b>Link 1</b></Link>
-                </li>
-                <li>
-                  <Link class=" text-light"  to="#!"><b>Link2</b></Link>
-                </li>
-                <li>
-                  <Link class=" text-light"  to="#!"><b>Link 3</b></Link>
-                </li>
-              </ul>
-
             </div>
-            {/* <!-- Grid column --> */}
-    
+            <div className="col-md-2">
+                    </div>
+                    
+            </div>
         </div>
+        
+       
           {/* <!-- Grid row --> */}
 
       </div>
@@ -129,8 +166,8 @@ export default function Footer() {
 
 
       {/* <!-- Copyright --> */}
-      <div class="footer-copyright text-center py-3 justify-content-center" style={{backgroundColor:"white"}}>© 2020 Copyright:
-        <a href="https://mdbootstrap.com/" class="" style={{color:"#93329e"}} > Made With Love ❤️ by Team Forever Knights </a>
+      <div class="footer-copyright text-center py-3 justify-content-center" style={{backgroundColor:"white",textAlign:"center",color:"black"}}>
+        © 2021 Copyright: Made With Love ❤️ by Team {' '} <b>Forever Knights</b> 
         </div>
 
     </footer>

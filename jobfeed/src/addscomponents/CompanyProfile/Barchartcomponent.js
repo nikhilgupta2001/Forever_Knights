@@ -17,7 +17,7 @@ constructor(props)
     op = this.props.array;
     console.log(op);
     op.reverse();
-     var data = op.slice(0,7)
+     var data = op.slice(0,5)
     console.log(data)
     
     return (

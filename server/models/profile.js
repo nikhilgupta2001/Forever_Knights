@@ -21,9 +21,9 @@ const profileSchema = new mongoose.Schema({
         default:0
     },
     Interests: {
-        type: String,
+        type: [],
         required: true,
-        default:"",
+        
     },
     Email: {
         type: String,

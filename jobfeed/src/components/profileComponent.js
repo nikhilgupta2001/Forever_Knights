@@ -3,14 +3,19 @@ import { Link } from 'react-router-dom';
 import NavBar from './home/Navbar';
 import './profile.css';
 import { useDispatch, useSelector } from 'react-redux'
-import TagsInput from 'react-tagsinput'
 import axios from 'axios';
 import Profilenav from './Profile/Profilenav';
 import Spinner from './Spinner';
 import { getprofile } from '../redux/actions/getprofile';
 import Footer from './home/Footer';
+import 'react-tagsinput/react-tagsinput.css'
+import Autosuggest from 'react-autosuggest';
+import TagsInput from './Tagsinput';
+
+// import { WithContext as ReactTags } from 'react-tag-input';
 
 const Profile = (history) => {
+    var arr = [];
     const [edit, setEdit] = useState("false")
     //var edit = "false";
     const dispatch = useDispatch();
@@ -19,9 +24,10 @@ const Profile = (history) => {
 
     // const userName=window.localStorage.getItem('userName');
     //         console.log(userName);
-    const name=localStorage.getItem('userName');
-    const email=localStorage.getItem('email')
+    const name = localStorage.getItem('userName');
+    const email = localStorage.getItem('email')
     useEffect(() => {
+        console.log(Interests);
 
         const userName = window.localStorage.getItem('userName');
         console.log(userName);
@@ -29,12 +35,31 @@ const Profile = (history) => {
         dispatch(getprofile(userName));
 
     }, [dispatch])
+
+     
+    
     const [image, setImage] = useState("");
+    
     // const [name, setName] = useState("");
     // const [email, setEmail] = useState("");
-    const [Interests, setInterests] = useState("");
+    // const handleChange=() =>{
+    //     console.log(tags,'42')
+    //     setTags(tags)
+    //   }
+
+    const [Interests, setInterests] = useState([]);
+    
+    
     const [ImageUrl, setImageUrl] = useState("https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg");
+    
     const postDetails = (e) => {
+
+        // if(!(window.event && window.event.keyCode == 13)){
+            
+        // }
+        localStorage.setItem('Interests', Interests)
+        // window.localStorage.setItem(arr);
+        console.log(e);
         console.log(image)
         e.preventDefault();
         const data = new FormData()
@@ -50,6 +75,7 @@ const Profile = (history) => {
                 console.log(data);
                 setImageUrl(data.secure_url);
                 // set profile
+
                 const personData = {
                     name,
                     email,
@@ -68,17 +94,16 @@ const Profile = (history) => {
     }
 
     //
-    const editDetails = (e) => {
+    
+    const selectedTags = tags => {
+		console.log(tags);
+        
+        arr.push(tags)
+        setInterests(arr)
+	};
 
-        e.preventDefault();
-        setEdit("true");
-    }
+    console.log(Interests,"line 99")
 
-    const onsaveChange = (e) => {
-
-        e.preventDefault();
-
-    }
     return (
         <div>
             { loading ? (
@@ -122,7 +147,7 @@ const Profile = (history) => {
                                     <div className="col-md-8 ">
                                         <div className="row text-light">
                                             <div className="col-md-12">
-                                                <form>
+                                                <form onsubmit="return false">
                                                     <div className="mb-3">
                                                         <label for="first_name">User Name</label>
                                                         <div class="input-field col s12">
@@ -144,31 +169,32 @@ const Profile = (history) => {
                                                         {/* <label for="exampleInputEmail1" className="form-label">Email</label>
                                                 <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={e => setEmail(e.target.value)} /> */}
                                                     </div>
-                                                    <div className="mb-3">
+                                                    <div className="mb-3 text-dark">
                                                         <label for="first_name">Interests</label>
 
-                                                        <div class="input-field col s12">
+                                                        {/* <div class="input-field col s12">
                                                             <input onChange={e => setInterests(e.target.value)} id="first_name" type="text" class="validate" />
-
-                                                        </div>
-
-
+                                                        </div> */}
+                                                          <TagsInput selectedTags={selectedTags}  tags={[]}/>
+                                                          {/* <input type="text"/> */}
+                                                     
+                                                           
                                                         {/* <label for="exampleInputEmail1" className="form-label">Interests</label>
                                                 <input type="text" data-role="tagsinput" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={e => setInterests(e.target.value)} /> */}
                                                     </div>
-                                                    <div className="mb-3">
+                                                    {/* <div className="mb-3">
 
                                                         <div class="input-field col s12">
                                                             <input placeholder="Placeholder" onChange={e => setInterests(e.target.value)} id="first_name" type="text" class="validate" />
                                                             <label for="first_name"></label>
-                                                        </div>
+                                                        </div> */}
 
 
                                                         {/* <label for="exampleInputEmail1" className="form-label"></label>
                                                 <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" /> */}
-                                                    </div>
-                                                    <button onClick={postDetails} type="submit" className="btn btn-primary">Save Changes</button>
+                                                    {/* </div> */}
                                                 </form>
+                                                <button onClick={postDetails}  className="btn btn-primary">Save Changes</button>
                                             </div>
                                         </div>
                                     </div>

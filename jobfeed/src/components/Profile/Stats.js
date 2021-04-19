@@ -8,13 +8,31 @@ import  {useSelector,} from 'react-redux';
 import {useTransition, animated,useSpring} from 'react-spring'
 import axios from 'axios';
 import Footer from '../home/Footer';
+import history from '../../redux/actions/history';
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
 const Stats  = () => {
-    
+    const temp=useSelector(state=>state.getProfile.profile.data);
+    // console.log(temp)
+    if(temp==null)
+    {
+        history.push('/profile');
+      
+        window.location.reload(true);
+        // toast.error("");
+    }
     const Barchart=useSelector(state=>state.getProfile.profile.data.videoWatched);
     const credit=useSelector(state=>state.getProfile.profile.data.credits)
     const props = useSpring({ number: credit, from: { number: 0 } })
     
-   
+        
     return (
         <div className="">
             <NavBar/>
@@ -24,6 +42,7 @@ const Stats  = () => {
             </div>
             <div className="col-md-8">
                 <div className="row" style={{height:"250px"}}>
+
                 <Chart info={Barchart}/>
                 </div>
                 <div className="row text-center fontA" style={{height:"250px"}}>

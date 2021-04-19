@@ -2,7 +2,9 @@ import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import NavBar from '../../components/home/Navbar'
-import Spinner from '../../components/Spinner';
+import Spinner from './Spinner';
+import { toast } from "react-toastify";
+import '../companyprofile.css';
 const CompanyUploadVideo = (history) => {
     // https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg
     const [ImageUrl, setImageUrl] = useState("https://d30y9cdsu7xlg0.cloudfront.net/png/140281-200.png");
@@ -28,7 +30,19 @@ const CompanyUploadVideo = (history) => {
             }
             console.log(personData);
             axios.post('http://localhost:5000/companyProfile/savevideo', personData)
-                .then(res => { console.log(res)})
+                .then((res) => {
+
+                    console.log(res);
+
+                    if(res.data.err == null)
+                    {
+                        toast.success("Video saved successfully");
+                    }
+                    else{
+                     console.log(res)
+                     toast.error("Video already exist ")
+                    }
+                    })
                 .catch(err => { console.log(err) }
                 );
         }
@@ -72,7 +86,7 @@ const CompanyUploadVideo = (history) => {
             })
     }
     return (
-        <div >
+        <div className="companyuploadfont">
             <NavBar/>
             <div class="jumbotron container-fluid jumbotron-fluid" style={{ backgroundColor: "#f8f5f1" }}>
                 <div className="row">

@@ -22,30 +22,69 @@ function Main(){
     return(
      
             <Router >
-            <Switch>
+            
             <Route exact path='/'><SignUp/></Route>
-            <Route exact path='/Signup'><SignUp/></Route>
+            <Route exact path='/signup'><SignUp/></Route>
       
-           <Route exact path='/Profile'><Profile/></Route>
-            {/* <PrivateRouting exact path="/home"> 
-            <Route path="/home/" component={Home} />
-            </PrivateRouting> */}
-      
-            <Route exact path="/home"><Home /></Route>
-            <Route exact path='/Profile'><Profile/></Route>
-            <Route exact path="/Adds"><Adds/></Route>    
-            <Route exact path="/Stats"><Stats /></Route>
-            <Route exact path="/MoneyEarned"><MoneyEarned /></Route>
-            <Route exact path="/EditProfile"><EditProfile /></Route>
-            <Route exact path="/BankDetails"><BankDetails /></Route>
+           {/* <Route exact path='/Profile'><Profile/></Route> */}
+            <Switch>
+            <PrivateRouting exact path="/home" component={Home} /> 
+            </Switch>
+           
+            <Switch>
+            <PrivateRouting  exact path='/profile' component={Profile}/>
+            </Switch>
+            <Switch>
+            <Route exact path="/adds"><Adds/></Route> 
+            </Switch>
+             
+            <Switch>
+            <PrivateRouting  exact path="/stats" component={Stats}/>
+            </Switch>
+            
+            <Switch>
+            <PrivateRouting exact path="/moneyearned" component={MoneyEarned}/>
+            </Switch>
+
+            <Switch>
+            <PrivateRouting exact path="/editProfile" component={EditProfile} />
+            </Switch>
+           
+
+            <Switch>
+            <PrivateRouting exact path="/bankdetails" component={BankDetails}/>
+            </Switch>
+            
             {/* COMPANY PROFILE */}
-            <Route exact path="/getaddsfeatured"><Companyprofile /></Route>
-            <Route exact path="/Companyprofile"><Companyprofile/></Route>
-            <Route exact path="/companystats"><CompanyStats /></Route>
-            <Route exact path="/companyuploadvideo"><CompanyUploadVideo/></Route>
-            <Route exact path="/ComapanyPayments"><ComapanyPayments/></Route>
+
+        
+           <Switch>
+            <PrivateRouting exact path="/getaddsfeatured" component={Companyprofile}/>
+            </Switch>
+
+            <Switch>
+            <PrivateRouting exact path="/companyprofile" component={Companyprofile}/>
+            </Switch>
+
+            <Switch>
+            <PrivateRouting exact path="/companystats" component={CompanyStats}/>
+            </Switch>
+
+            <Switch>
+            <PrivateRouting  exact path="/companyuploadvideo" component={CompanyUploadVideo}/>
+            </Switch>
+
+            <Switch>
+            <PrivateRouting exact path="/comapanypayments" component={ComapanyPayments}/>
+            </Switch>
+
+            <Switch>
+            <PrivateRouting exact path="/editprofile" component={EditProfile} />
+            </Switch>
+
+            
             {/* <Redirect to="/"/> */}
-        </Switch>
+        
         </Router>
         
     )

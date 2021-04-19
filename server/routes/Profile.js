@@ -9,13 +9,11 @@ const win = require('node-windows')
 
 router.post('/', (req, res) => {
   // res.header('Access-Control-Allow-Origin', '*');
-
-
-
   // console.log(req.body);
-  const { name, email, Interests, ImageUrl } = req.body;
 
-
+  var { name, email, Interests, ImageUrl } = req.body;
+  console.log(Interests);
+  Interests = Interests[0];
   Profile.findOne({ userName: name }).then((response) => {
     if (response == null) {
       const profile = new Profile({
@@ -31,7 +29,8 @@ router.post('/', (req, res) => {
         })
     }
     else {
-      Profile.updateOne({ userName: name }, { $set: { Interests: Interests, ImageUrl: ImageUrl } })
+      console.log(Interests, "32")
+      Profile.updateOne({ userName: name }, { "$push": { "Interests": Interests }, "$set": { "ImageUrl": ImageUrl } })
     }
   })
   // const profile = new Profile({

@@ -4,6 +4,8 @@ import Barchart from './Barchartcomponent'
 import axios from 'axios'
 import NavBar from '../../components/home/Navbar'
 import Spinner from '../../components/Spinner'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 
 const CompanyStats = () => {
@@ -19,10 +21,13 @@ const CompanyStats = () => {
             .then((res) => {
                 console.log(res.data);
                 arr = res.data;
+                if(arr.length==0)
+                {
+                    toast.dark("Hey add Some addvertisement to have stats");
+                    
+                }
                 console.log(arr);
                 var tap = [];
-                  
-                 
                 
                 for (let i = 0; i < arr.length; i++) {
                     tap.push({ "name": arr[i].writeup, "views": arr[i].views })

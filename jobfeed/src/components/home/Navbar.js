@@ -1,7 +1,7 @@
 
 // export default NavBar;
 import React, { useState } from 'react';
-
+import './navbar.css';
 import { Link, Redirect } from 'react-router-dom'
 import {
     Collapse,
@@ -25,7 +25,7 @@ const NavBar = (props) => {
     const usertype = localStorage.getItem('usertype');
     const token = localStorage.getItem('token')
     const [login, setlogin] = useState(true)
-    const [antifix,setantifix]=useState(false);
+    const [antifix, setantifix] = useState(false);
     console.log(usertype);
     const logout = () => {
         console.log("HELLO");
@@ -39,91 +39,106 @@ const NavBar = (props) => {
     else {
         x = false;
     }
-    
+
     var init = 750;
-    
+
     window.addEventListener('scroll', (event) => {
-       
-        if(window.pageYOffset>window.innerHeight && init < window.innerheight )
-        {
-               setantifix(true) ;
-               init = window.pageYoffset
-             
-            
-        }
-        else if(window.pageYOffset<window.innerHeight && init > window.innerheight){
-                setantifix(false);
-                init = window.pageYoffset;
-        }
-      });
+        if (window.pageYOffset > window.innerHeight && init < window.innerheight) {
+            setantifix(true);
+            init = window.pageYoffset
 
 
-     
+        }
+        else if (window.pageYOffset < window.innerHeight && init > window.innerheight) {
+            setantifix(false);
+            init = window.pageYoffset;
+        }
+    });
+
+
+
     return (
 
         <div>
-            { x ? ( 
-                 
+            { x ? (
+
                 // <Navbarfirst antifix={antifix}/>
                 // <Navbar light expand="md" style={{ opacity: "0.6", zIndex: "100", backgroundColor: "#93329e" ,position:"fixed"}}></Navbar>
-                    
-                 <Navbar light expand="md" style={{ opacity: "0.6", backgroundColor: "#93329e" }}>
-                
 
+                <Navbar light expand="md" style={{ opacity: "0.8",height:"80px",backgroundColor:"#93329e"}}>
+
+
+
+                    <NavbarBrand >
             
-                  <NavbarBrand ><a style={{ textDecoration: "none", color: "lead" }} href="/home">Home</a></NavbarBrand>
-                    <NavbarToggler style={{ text: "black", backgroundColor: "black" }} onClick={toggle} />
-                    <Collapse isOpen={isOpen} navbar>
-                        <Nav className="mr-auto" navbar>
-                            <NavItem>
-                                <NavLink ><a style={{ text: "black" }} href="/"><b>SignIn</b></a></NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink><a style={{ text: "black" }} href="/getaddsfeatured"><b>Live Adds</b></a>
-
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink ><a style={{ text: "black" }} href="/companystats"><b>Stats</b></a></NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink ><a style={{ text: "black" }} href="/companyuploadvideo"><b>Upload Video</b></a></NavLink>
-                            </NavItem>
+                    <NavbarBrand className="navbar-brand"  >
                             
+                            <a href="/home"><img className="" style={{ height: "80px", width: "100px",position:"absolute",left: "0px", top: "0px" }} src="/Images/logofinal.jpeg" /></a>
+                           
+                        </NavbarBrand>
+
+
+                    </NavbarBrand>
+                    <NavbarToggler style={{zIndex:"100" ,border:"1px solid black",backgroundColor:"#93329e",color:'black'}} onClick={toggle} />
+                    <Collapse isOpen={isOpen} navbar style={{backgroundColor:"#93329e" }}>
+                        <Nav  className="mr-auto" navbar>
+                             
+                              {/* <NavItem>
+                            <NavLink><b style={{ color: "white" }}>{' '}Addstube</b></NavLink>
+                            </NavItem> */}
+                            <NavItem className="show">
+                                    <NavLink><div className="linkk" style={{color:"#93329e"}}href="/adds"><b>kllllllll</b></div></NavLink>
+                                </NavItem >
                             <NavItem>
+                                <NavLink><a className="linkk" href="/companyprofile"><b>Live Adds</b></a></NavLink>
+                            </NavItem>
+                            <NavItem className="show">
+                                <NavLink ><a className="linkk" href="/companystats"><b>Stats</b></a></NavLink>
+                            </NavItem>
+                            <NavItem className="show">
+                                <NavLink ><a className="linkk" href="/companyuploadvideo"><b>Upload Video</b></a></NavLink>
+                            </NavItem>
                             {
-                                login ? (<a className="waves-effect waves-light btn  active " style={{ position: "absolute", right: "10px", bottom: "20px", }} onClick={logout}>Logout</a>
+                                login ? (<NavItem className="show"><NavLink ><a className="linkk waves-effect waves-light float-right btn-small font-weight-bold nav-item  active" onClick={logout}>Logout</a></NavLink></NavItem>
                                 ) : <div><Redirect to="/"></Redirect></div>
                             }
-                            </NavItem>
+                            {/* style={{  right: "10px", bottom: "20px", }} */}
                         </Nav>
                     </Collapse>
                 </Navbar>
 
                 // --------------------
-                )
+            )
                 :
 
                 (
-                    <Navbar light expand="md" style={{ opacity: "0.6", backgroundColor: "#93329e"}}>
-                        <NavbarBrand href="/home" style={{ text: "black" }}>Home</NavbarBrand>
-                        <NavbarToggler onClick={toggle} />
-                        <Collapse isOpen={isOpen} navbar>
-                            <Nav className="mr-auto" navbar>
-                            <NavItem>
-                                <NavLink ><a style={{ text: "black" }} href="/"><b>SignIn</b></a></NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink ><a style={{ text: "black" }} href="/Adds"><b>See Adds</b></a></NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink ><a style={{ text: "black" }} href="/profile"><b>My Profile</b></a></NavLink>
-            
-                            </NavItem>
-                            {
-                                login ? (<a className="waves-effect waves-light float-right btn-small font-weight-bold nav-item  active" style={{ position: "absolute", right: "10px", bottom: "20px", }} onClick={logout}>Logout</a>
-                                ) : <div><Redirect to="/"></Redirect></div>
-                            }
+                    // style={{height:"63px" ,width:"",marginTop:"0px",marginLeft:"0px",}}
+                    <Navbar  expand="md" style={{ opacity: "0.8",height:"80px",backgroundColor:"#93329e",color:'black'}}>
+
+                        <NavbarBrand className="navbar-brand"  >
+                            
+                            <a href="/home"><img className="" style={{ height: "80px", width: "100px",position:"absolute",left: "0px", top: "0px" }} src="/Images/logofinal.jpeg" /></a>
+                           
+                        </NavbarBrand>
+                        <NavbarToggler  style={{zIndex:"100" ,border:"1px solid black",backgroundColor:"#93329e",color:'black'}} onClick={toggle}  />
+                        <Collapse  isOpen={isOpen} navbar style={{backgroundColor:"#93329e" }} >
+                            <Nav  className=" mr-auto" navbar >
+                            {/* <NavItem>
+                            <NavLink><b style={{ color: "white" }}>{' '}Addstube</b></NavLink>
+                            </NavItem> */}
+                                <NavItem className="show">
+                                    <NavLink><div className="linkk" style={{color:"#93329e"}}href="/adds"><b>kllllllllll</b></div></NavLink>
+                                </NavItem >
+                                <NavItem className="show">
+                                    <NavLink ><a className="linkk" href="/adds"><b>{' '} Watch Adds</b></a></NavLink>
+                                </NavItem >
+                                <NavItem   className="show">
+                                    <NavLink ><a className="linkk" href="/profile"><b>My Profile</b></a></NavLink>
+                                </NavItem >
+                                {
+                                    login ? (<NavItem   className="show"><NavLink ><a className="waves-effect waves-light btn-small font-weight-bold nav-item  active float-right" onClick={logout}>Logout</a></NavLink></NavItem>
+                                    ) : <div><Redirect to="/"></Redirect></div>
+                                }
                             </Nav>
 
                         </Collapse>
@@ -133,8 +148,7 @@ const NavBar = (props) => {
 
     )
 }
-export default NavBar;
 
 
-
+export default NavBar
 

@@ -1,7 +1,13 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Zen+Dots&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 .linkbtn{
     text-decoration: none !important;
     color:white;
 }
 .linkbtn:hover{
     color:white;
+}
+.companyuploadfont{
+    font-family: 'Open Sans Condensed', sans-serif;
 }

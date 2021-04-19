@@ -16,15 +16,10 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/signup',SignUp);
-
 app.use('/signin',Signin);
-
 app.use('/profile',Profile);
-
 app.use('/companyProfile',Companyprofile);
-
 app.use('/adds',Adds);
-
 mongoose.connect(MONGOURI,{
     useNewUrlParser:true,
     useUnifiedTopology:true

@@ -7,6 +7,7 @@ import { loginUser, registeruser } from '../redux/actions/signin_';
 import history from '../redux/actions/history';
 import Spinner from './Spinner';
 import Toast from './Profile/Toast'
+import './profile.css'
 // import M from 'materialize-css'
 function SignUp() {
     const authToken = useSelector((state) => state.authReducer.isAuthenticated);
@@ -72,11 +73,14 @@ function SignUp() {
         }
         dispatch(loginUser(data))
     }
+    var height_ = window.outerHeight;
+    console.log(height_);
   
     return (
-        <div>
+        
+        <div style={{height:{height_}}}>
             {/* {<Toast message="hello"/>} */}
-           <div style={{padding:"5.5% 0.5%",backgroundImage:`url("https://i.pinimg.com/474x/6f/78/82/6f788269f05c97b48355ae297d304787.jpg")`}}>
+           <div style={{padding:"5.5% 0.5%", }} className="main" >
             <div style={{ backgroundColor: "rgb(255,255,255,255)" ,marginRight:"5%",marginLeft:"5%"}} className="shadow-lg " >
                 <div className=" container-fluid " style={{padding:"45px"}}>
                     <div className="row pd-8">
@@ -102,7 +106,7 @@ function SignUp() {
                                             <option >Company</option>
 
                                         </select>
-
+                                       
 
                                         <div className="mb-3">
                                             <label for="exampleInputPassword1" className="form-label">Password</label>
@@ -125,10 +129,7 @@ function SignUp() {
                                             <label for="exampleInputPassword1" className="form-label">Password</label>
                                             <input type="password" className="form-control" id="exampleInputPassword1" onChange={e => setPassword(e.target.value)} />
                                         </div>
-                                        <div className="mb-3 form-check">
-                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                            <label className="form-check-label" for="exampleCheck1">Check me out</label>
-                                        </div>
+                                        
                                         <button type="submit" onClick={onSubmitsignin} className="btn btn-primary">Signin</button>
                                     </form>
                                 </div>

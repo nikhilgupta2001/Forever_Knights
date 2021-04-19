@@ -5,7 +5,8 @@ import Video from './CompanyProfile/Video';
 import './companyprofile.css';
 import axios from 'axios';
 import { Parallax, Background } from "react-parallax";
-
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const image1 =
     "https://wallpapercave.com/wp/wp3422169.jpg";
@@ -22,13 +23,19 @@ const Companyprofile=() => {
     }
   console.log(id);
   useEffect(()=>{
-           axios.post('http://localhost:5000/companyProfile/getcompanyvideos',details).then((res)=>{
+           axios.post('http://localhost:5000/companyProfile/getcompanyvideos',details)
+           .then((res)=>{
+               if(res.data.length==0)
+               {
+                 toast.info("You dont have any addvertisement to show");
+                 
+               }
                setData(res.data)
            })
      },[])
 
     return (
-        <div>
+        <div style={{height:"100%"}}>
             <NavBar />
             <Parallax bgImage={image1}  strength={400}>
                      

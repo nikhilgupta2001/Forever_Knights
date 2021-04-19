@@ -73,12 +73,21 @@ export const loginUser = userData => {
                     type: SIGNED_IN,
                     payload: res
                 });
-                history.push('/home');
+                if(usertype=='Company')
+                {
+                    history.push('/home');
+                }
+                else
+                {
+                history.push('/profile');
+                }
                 window.location.reload(true);
                 toast.success("Logged in successfully")
 
             })
-            .catch((err) => {console.log(err); toast(err)}
+            .catch((err) => {console.log(err); 
+                toast(err)
+            }
             )
     }
 }
