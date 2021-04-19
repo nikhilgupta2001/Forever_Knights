@@ -38,7 +38,7 @@ When you’re a marketing professional, it’s expected that you’ll constantly
       ![](Images/readme3.png)
       
    4. Plain JavaScript used
-       ![](Images/readme4.png)
+       ![](jobfeed/public/Images/readme4.png)
    5. ![](Images/readme5.png)
    6. ![](Images/readme6.png)
    7. ![](Images/readme7.png)
