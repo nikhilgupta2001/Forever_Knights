@@ -144,8 +144,7 @@ It is very easy to use our project if anyone wants. Just follow the steps :
     "node-windows": "^1.0.0-beta.5",
     "nodemailer": "^6.5.0",
     "nodemon": "^2.0.7",
-    "util": "^0.12.3"
-  },
+    "util": "^0.12.3"}
    ``` 
    ```javascript : frontend
        "dependencies": {
@@ -178,8 +177,7 @@ It is very easy to use our project if anyone wants. Just follow the steps :
     "redux-thunk": "^2.3.0",
     "typed.js": "^2.0.12",
     "video-react": "^0.14.1",
-    "web-vitals": "^1.1.1"
-  },
+    "web-vitals": "^1.1.1" },
    ```
       
 
