@@ -27,21 +27,13 @@ When you’re a marketing professional, it’s expected that you’ll constantly
 
 
 ## Screen shots of website
-  1. Home Page
-  
-       ![](Images/readme1.png)
-
-  2. 
-      ![](Images/readme2.png)
-  
-  3. 
-      ![](Images/readme3.png)
-      
-   4. Plain JavaScript used
-       ![](Images/readme4.png)
-   5. ![](Images/readme5.png)
-   6. ![](Images/readme6.png)
-   7. ![](Images/readme7.png)
+   1. ![](jobfeed/public/Images/readme1.png)
+   2. ![](jobfeed/public/Images/readme2.png)
+   3. ![](jobfeed/public/Images/readme3.png)
+   4. ![](jobfeed/public/Images/readme4.png)
+   5. ![](jobfeed/public/Images/readme5.png)
+   6. ![](jobfeed/public/Images/readme6.png)
+   7. ![](jobfeed/public/Images/readme7.png)
 
 
 
@@ -146,8 +138,7 @@ It is very easy to use our project if anyone wants. Just follow the steps :
     "node-windows": "^1.0.0-beta.5",
     "nodemailer": "^6.5.0",
     "nodemon": "^2.0.7",
-    "util": "^0.12.3"
-  },
+    "util": "^0.12.3" },
    ``` 
    ```javascript : frontend
        "dependencies": {
@@ -180,9 +171,8 @@ It is very easy to use our project if anyone wants. Just follow the steps :
     "redux-thunk": "^2.3.0",
     "typed.js": "^2.0.12",
     "video-react": "^0.14.1",
-    "web-vitals": "^1.1.1"
-  },
-   `` 
+    "web-vitals": "^1.1.1"},
+   ```
       
 
 5. After successful installation run the following command to start the application :
