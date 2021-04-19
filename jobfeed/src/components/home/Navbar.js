@@ -65,7 +65,7 @@ const NavBar = (props) => {
                 // <Navbarfirst antifix={antifix}/>
                 // <Navbar light expand="md" style={{ opacity: "0.6", zIndex: "100", backgroundColor: "#93329e" ,position:"fixed"}}></Navbar>
 
-                <Navbar light expand="md" style={{ opacity: "0.8",height:"80px",backgroundColor:"#93329e"}}>
+                <Navbar light expand="md" style={{ opacity: "0.8",height:"80px", backgroundColor: "#93329e"}}>
 
 
 
@@ -73,7 +73,7 @@ const NavBar = (props) => {
             
                     <NavbarBrand className="navbar-brand"  >
                             
-                            <a href="/home"><img className="" style={{ height: "80px", width: "100px",position:"absolute",left: "0px", top: "0px" }} src="/Images/logofinal.jpeg" /></a>
+                            <a href="/home"><img className="" style={{clipPath:"circle()", height: "80px", width: "100px",position:"absolute",left: "0px", top: "0px" }} src="/Images/logofinal.jpeg" /></a>
                            
                         </NavbarBrand>
 
@@ -117,7 +117,7 @@ const NavBar = (props) => {
 
                         <NavbarBrand className="navbar-brand"  >
                             
-                            <a href="/home"><img className="" style={{ height: "80px", width: "100px",position:"absolute",left: "0px", top: "0px" }} src="/Images/logofinal.jpeg" /></a>
+                            <a href="/home"><img className="" style={{ height: "80px",clipPath:"circle()", width: "100px",position:"absolute",left: "0px", top: "0px" }} src="/Images/logofinal.jpeg" /></a>
                            
                         </NavbarBrand>
                         <NavbarToggler  style={{zIndex:"100" ,border:"1px solid black",backgroundColor:"#93329e",color:'black'}} onClick={toggle}  />

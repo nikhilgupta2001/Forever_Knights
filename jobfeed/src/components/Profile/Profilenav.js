@@ -5,7 +5,7 @@ export default function Profilenav() {
         // if(window.outerWidth>=768)
         // {
             return(
-                <div className="shadow-lg" style={{backgroundColor:"#ffe268"}} >
+                <div className="shadow-lg" style={{background:"linear-gradient(to right, #ff00cc, #333399)"}} >
              <div className="" >
                         <div className="row"    >
                             {/* <div className="card">
@@ -13,7 +13,7 @@ export default function Profilenav() {
                                 <Link to="/Edit" className="" >Edit Profile</Link>
                                 </div>
                             </div> */}
-                            <div className="card text-light bg-danger mb-1 col-md-12" >
+                            <div style={{background: "linear-gradient(to right, #6441a5, #2a0845)"}} className="card text-light bg-danger mb-1 col-md-12" >
                             <div className="card-header">GoTo</div>
                             <div className="card-body ">
                                 <Link to="/profile" style={{color:"white"}}><h5 className="card-title ">Edit Profile</h5></Link>
@@ -23,7 +23,7 @@ export default function Profilenav() {
                             
                         </div>
                         <div className="row"  >
-                            <div className="card text-light bg-success mb-1 col-md-12" >
+                            <div style={{background: "linear-gradient(to right, #6441a5, #2a0845)"}} className="card text-light bg-success mb-1 col-md-12" >
                                 <div className="card-header">GoTo</div>
                                 <div className="card-body ">
                                     <Link to="/stats" style={{color:"white"}}><h5 className="card-title">Stats</h5></Link>
@@ -32,7 +32,7 @@ export default function Profilenav() {
                             </div>
                         </div>
                         <div className="row"  > 
-                            <div className="card text-light bg-primary mb-1 col-md-12" >
+                            <div style={{background: "linear-gradient(to right, #6441a5, #2a0845)"}} className="card text-light bg-primary mb-1 col-md-12" >
                                     <div className="card-header">GoTo</div>
                                     <div className="card-body ">
                                         <Link to="/bankingdetails" style={{color:"white"}}><h5 className="card-title ">Banking Details</h5></Link>
