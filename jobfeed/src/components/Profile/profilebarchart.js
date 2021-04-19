@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { toast } from 'react-toastify';
 import {
   ComposedChart,
   Line,
@@ -11,6 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import history from '../../redux/actions/history';
 
 var data = [
  
@@ -24,13 +26,21 @@ export default class Example extends PureComponent {
 
   render() {
     const arr=this.props.info;
-    console.log(arr);
+    // console.log(arr.length);
+    if(arr.length==0)
+    {
+      toast.dark('Watch Some adds to have stats')
+      history.push('/adds');
+      window.location.reload(true);
+
+    }
    var arrfinal = [];
-   var date = arr[arr.length-1].date;
+   
+   var date=arr[arr.length-1].date;
    var ct = 0;
     for(let i=arr.length-1;i>=0;i--)
     {
-      //console.log(arr[i].date === date);
+    console.log(arr[i].date === date ,"33");
     
         if(arr[i].date == date)
         {

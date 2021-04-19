@@ -5,6 +5,7 @@ import NavBar from '../../components/home/Navbar'
 import Spinner from './Spinner';
 import { toast } from "react-toastify";
 import '../companyprofile.css';
+import Footer from '../../components/home/Footer'
 const CompanyUploadVideo = (history) => {
     // https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg
     const [ImageUrl, setImageUrl] = useState("https://d30y9cdsu7xlg0.cloudfront.net/png/140281-200.png");
@@ -95,7 +96,7 @@ const CompanyUploadVideo = (history) => {
                         <img src="https://th.bing.com/th/id/OIP.Q2RFfE6JaFd3DwJWlsKyNAHaEK?pid=ImgDet&rs=1" style={{ clipPath: "circle()", maxHeight: "400px",width:"100%" }} />
                     </div>
                     <div className="col-md-7">
-                        <h1 class="display-4 text-center ">Upload Video</h1>
+                        <h1 class="display-4 text-center "><b>Upload Video</b></h1>
                         <p class="lead text-center">Upload your video to showcase your awesome products to capture the world with your insight.</p>
                     </div>
                 </div>
@@ -208,7 +209,7 @@ const CompanyUploadVideo = (history) => {
             </div>
             
 
-
+       <Footer/>
         </div>
     )
 }

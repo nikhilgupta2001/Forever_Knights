@@ -37,7 +37,7 @@ const Companyprofile=() => {
     return (
         <div style={{height:"100%"}}>
             <NavBar />
-            <Parallax bgImage={image1}  strength={400}>
+            <Parallax style={{background: "linear-gradient(to right, #20002c, #cbb4d4)"}}  strength={400}>
                      
             <div className="row container-fluid  " style={{ height: "100%", }}>
                 <div className="col-md-12 col-sm-12 " style={{ height: "100%" }}>

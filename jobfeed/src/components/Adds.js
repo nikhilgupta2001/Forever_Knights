@@ -56,7 +56,7 @@ const Adds = () => {
     return (
         <div>
             <NavBar />
-            <Parallax bgImage={image1} strength={100} style={{ height: "100%" }}>
+            <Parallax strength={100} style={{ height: "100%"}}>
                 <div>
 
                     <div className="row" style={{ justifyContent: "center" }}>
@@ -68,12 +68,12 @@ const Adds = () => {
                             ) : (getAdds[0].map((e) => {
                                 console.log(e);
                                 return (
-                                    <div className=" col-md-5 col-sm-12 card m-2" style={{ backgroundColor: "linear-gradient(#fb3640, #ff8303, #8ab6d6)" }}>
+                                    <div className=" col-md-5 col-sm-12 card m-4" style={{   background: "linear-gradient(to right, #20002c, #cbb4d4)"}}>
                                         <div className="card-image m-1"  >
                                             <img src={e.thumbnailurl} onClick={() => modalCall(e)} />
                                         </div>
                                         <div className="card-body">
-                                            <p>{e.writeup}</p>
+                                            <p style={{color:"white"}}><b>{e.writeup}</b></p>
                                         </div>
                                     </div>
                                 )

@@ -30,7 +30,12 @@ router.post('/', (req, res) => {
     }
     else {
       console.log(Interests, "32")
-      Profile.updateOne({ userName: name }, { "$push": { "Interests": Interests }, "$set": { "ImageUrl": ImageUrl } })
+      Interests.map((e)=>{
+        console.log(e);
+        
+        Profile.updateOne({ userName: name }, { $push:  { Interests: e }, $set: { "ImageUrl": ImageUrl } })
+      })
+      console.log(Interests, "34")
     }
   })
   // const profile = new Profile({

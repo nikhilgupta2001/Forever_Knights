@@ -26,20 +26,20 @@ Maps feature has been added for easy navigation to shops.
 When you’re a marketing professional, it’s expected that you’ll constantly be generating innovative ideas for showcasing your brand to the world. While problem solving is at the core of what you do, even the most imaginative person needs a little inspiration from time to time.So here we are presenting our product where branding and addvertisement will not be a crap for users.Instead they will come here to incash their leisure time.On the other hand companies will reach directly to  millions of people.not  by disturbing them when they are working. but when they are happy to watch the adds.
 
 
-## Code style
-  1. Proper folder structure has been maintained
-  
-       ![](Images/Capture.PNG)
-
-  2. Proper indenting and sequential inclusion of files
-      ![](Images/Capture2.PNG)
-  
-  3. Basic HTML5 syntax with bootstrap included
-      ![](Images/Capture3.PNG)
-      
-   4. Plain JavaScript used
-       ![](Images/Capture4.PNG)
+## Screen shots of website
+   1. ![](jobfeed/public/Images/readme1.png)
    
+   2. ![](jobfeed/public/Images/readme2.png)
+    
+   3. ![](jobfeed/public/Images/readme3.png)
+    
+   4 ![](jobfeed/public/Images/readme4.png)
+   
+   5. ![](jobfeed/public/Images/readme5.png)
+    
+   6. ![](jobfeed/public/Images/readme6.png)
+    
+   7. ![](jobfeed/public/Images/readme7.png)
 
 
 
@@ -77,7 +77,6 @@ The following tools were used in building this site
  
 * Animation 
   * AOS
-  * 
     
 
 ## Features
@@ -144,7 +143,7 @@ It is very easy to use our project if anyone wants. Just follow the steps :
     "node-windows": "^1.0.0-beta.5",
     "nodemailer": "^6.5.0",
     "nodemon": "^2.0.7",
-    "util": "^0.12.3"}
+
    ``` 
    ```javascript : frontend
        "dependencies": {
@@ -177,7 +176,7 @@ It is very easy to use our project if anyone wants. Just follow the steps :
     "redux-thunk": "^2.3.0",
     "typed.js": "^2.0.12",
     "video-react": "^0.14.1",
-    "web-vitals": "^1.1.1" },
+
    ```
       
 

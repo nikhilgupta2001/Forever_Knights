@@ -66,7 +66,7 @@ class Video extends Component {
                     poster={this.props.url.thumbnailurl}
                     src={this.props.url.videoUrl}
                 >
-                    <ControlBar autoHide={false} disableDefaultControls={""}>
+                    <ControlBar autoHide={false} disableDefaultControls={"true"}>
                         <VolumeMenuButton />
                         <PlayToggle />
                         <LoadingSpinner />
@@ -77,7 +77,7 @@ class Video extends Component {
                 <div className="">
                     <h5 className="">Card title</h5>
                     <button type="button" class="btn">
-                        <span class="badge badge-primary  ">{Math.floor(this.state.timer) + "/" + Math.floor(this.state.player.duration)}</span>
+                        <span class="badge badge-primary" >{Math.floor(this.state.timer) + "/" + Math.floor(this.state.player.duration)}</span>
                     </button>
                     <p className="">{this.props.url.writeup}</p>
                 </div>

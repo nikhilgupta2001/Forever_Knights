@@ -22,7 +22,7 @@ export default function Footer() {
           
           
            
-               <img src="/Images/logofinal.jpeg"/>
+               <img style={{clipPath:"circle()"}} src="/Images/logofinal.jpeg"/>
             
 
           
