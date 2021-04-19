@@ -28,11 +28,17 @@ When you’re a marketing professional, it’s expected that you’ll constantly
 
 ## Screen shots of website
    1. ![](jobfeed/public/Images/readme1.png)
+   
    2. ![](jobfeed/public/Images/readme2.png)
+    
    3. ![](jobfeed/public/Images/readme3.png)
-   4. ![](jobfeed/public/Images/readme4.png)
+    
+   4 ![](jobfeed/public/Images/readme4.png)
+   
    5. ![](jobfeed/public/Images/readme5.png)
+    
    6. ![](jobfeed/public/Images/readme6.png)
+    
    7. ![](jobfeed/public/Images/readme7.png)
 
 
@@ -71,7 +77,6 @@ The following tools were used in building this site
  
 * Animation 
   * AOS
-  * 
     
 
 ## Features
