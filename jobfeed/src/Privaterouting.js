@@ -2,31 +2,27 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 // {component:Component}
-function PrivateRouting(props) {
-    const authToken = useSelector((state) => state.authReducer.isAuthenticated);
-    // console.log(Component)
-    console.log(authToken);
-    // var authToken = localStorage.getItem('jwtToken');
-    const { children, ...others } = props;
-    // children
-
+function PrivateRouting({component:Component,...rest}) {
+    const authToken = localStorage.getItem('jwtToken');
+     console.log(authToken);
+    // const { children, ...others } = props;
+    {console.log("Private Router")}
     return (
+   
         <Route
-            {...others}
-            // {...rest}
-            render={() =>
+            {...rest}
+            render={ props =>
                 !authToken ? (
         
                      <Redirect to="/"/>
                 ) : (
-                //    <Component {...props}/>
-                // <Redirect to="/home" />
-                children
+             
+                    <Component {...props}/>
+                   
                 )
                 
             }
         />
     );
 }
-
 export default PrivateRouting;

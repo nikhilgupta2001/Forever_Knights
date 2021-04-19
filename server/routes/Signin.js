@@ -31,18 +31,19 @@ router.post('/', (req, res) => {
                         console.log(savedUser);
                         var usertype = savedUser.usertype;
                         var id = savedUser._id;
+                        var email=savedUser.email
+                        var userName=savedUser.UserName
                         if (usertype == 'User') {
-                            Profile.findOne({ Email: email })
-                                .then((response) => {
+                            // User.findOne({ Email: email })
+                            //     .then((response) => {
                                     const data = {
-                                        response,
                                         token,
                                         usertype,
-                                        id
+                                        id,
+                                        email,
+                                        userName
                                     }
                                     res.json(data);
-                                })
-                                .catch((err) => console.log(err))
                         }
                         else {
                             const data = {

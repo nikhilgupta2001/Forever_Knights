@@ -1,0 +1,16 @@
+.linkk{
+    text-decoration: none;
+    color:white;
+}
+.linkk:hover{
+    color:black;
+}
+/* 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand>img {
+  padding: 0px 0px;
+  width: 6rem;
+} */

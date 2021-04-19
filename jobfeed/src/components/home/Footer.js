@@ -1,143 +1,177 @@
 import React from 'react'
-
+import {Link} from "react-router-dom"
 export default function Footer() {
-    return (
-        <div>
-            <div>
-            {/* <!-- Footer --> */}
-<footer class="bg-light text-center text-lg-start">
-  {/* <!-- Grid container --> */}
-  <div class="container p-4">
-    {/* <!--Grid row--> */}
-    <div class="row">
-      {/* <!--Grid column--> */}
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Footer Content</h5>
+  return (
+    
+ <div className="font">
+    
+   
+    {/* // < !--Footer -- > */}
+    <footer class="page-footer font-small  pt-4" style={{backgroundColor:"#93329e",text:"white"}}>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-          voluptatem veniam, est atque cumque eum delectus sint!
-        </p>
-      </div>
-      {/* <!--Grid column--> */}
+      {/* <!-- Footer Links --> */}
+      <div class="container-fluid text-center text-md-left" >
 
-      {/* <!--Grid column--> */}
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Links</h5>
+        {/* <!-- Grid row --> */}
+        <div class="row" >
 
-        <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#!" class="text-dark">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 4</a>
-          </li>
-        </ul>
-      </div>
-      {/* <!--Grid column-->
+          {/* <!-- Grid column --> */}
+          <div class="col-md-6 mt-md-0 mt-3">
 
-      <!--Grid column--> */}
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!" class="text-dark">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 4</a>
-          </li>
-        </ul>
-      </div>
-      {/* <!--Grid column--> */}
-    </div>
-    {/* <!--Grid row--> */}
-  </div>
-  {/* <!-- Grid container --> */}
-
-
-</footer>
-{/* <!-- Footer --> */}
-{/* Socail */}
+            {/* <!-- Content --> */}
+          
+          
+           
+               <img src="/Images/logofinal.jpeg"/>
             
-            <footer class="text-center text-white" style={{backgroundColor: "#f1f1f1"}}>
-  {/* <!-- Grid container --> */}
-  <div class="container pt-4">
-    {/* <!-- Section: Social media --> */}
-    <section class="mb-4">
-      {/* <!-- Facebook --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"> 
-        <i class="fab fa-facebook-f"></i>
+
+          
+              <h5 class="text-uppercase"><b>Forever Knights</b></h5>
+           
+
+           
+
+            {/* Added */}
+            <div className="row">
+              <div className="col-md-2 ">
+                </div>
+                <div className="col-md-8 col-sm-12">
+                
+            <p>Passion has always been a part and parcel of any success story .We been here 
+              to prove its very truth </p>
+
+              </div>
+              <div className="col-md-2 ">
+                </div>
+             </div>
+
+               {/* End */}
+
+          </div>
+           
+
+
+          {/* <!-- Grid column --> */}
+
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+            {/* <!-- Grid column --> */}
+           
+            <div class="col-md-6 ">
+              <div className="row mt-4 ">
+                {/* For spacing */}
+                  <div className="col-md-2">
+                    </div>
+          <div class="col-md-4 mr-2 ml-2">
+
+              {/* <!-- Links --> */}
+            {/* <h5 class="text-uppercase">Links</h5> */}
+              <ul style={{fontSize:"1.2rem"}} class="list-unstyled font-weight-bold text-light ">
+                <li class="p-2">
+                  <Link class=" text-light" to="/home"><b>Home</b></Link>
+                </li>
+                <li class="p-2">
+                  <Link class=" text-light " to="/contact"><b>Contact Us</b></Link>
+                </li>
+                <li class="p-2">
+                  <Link class=" text-light " to="/ourteam"><b>Our Team</b></Link>
+                </li>
+                <li class="p-2">
+                  <Link  class=" text-light " to="/feedback"><b>Feedback</b></Link>
+                </li>
+              </ul>
+        
+            </div>
+            {/* <!-- Grid column --> */}
+
+          
+          <div class="col-md-4   mr-2 ml-2">
+
+              {/* <!-- Links --> */}
+            {/* <h5 class="text-uppercase">Links</h5> */}
+
+              <ul style={{fontSize:"1.2rem"}} class="list-unstyled">
+                <li className="p-2">
+                  <Link class="  text-light"  to="/home"><b>Faqs</b></Link>
+                </li>
+                <li  className="p-2">
+                  <Link class=" text-light "  to="/about"><b>Feedback</b></Link>
+                </li>
+                <li  className="p-2">
+                  <Link class=" text-light "  to="#!"><b>Join us</b></Link>
+                </li>
+                <li  className="p-2">
+                  <Link class=" text-light "  to="#!"><b>Gift us a cup of coffee</b></Link>
+                </li>
+              </ul>
+
+            </div>
+            {/* <!-- Grid column --> */}
+            </div>
+            <div className="col-md-2">
+                    </div>
+                    
+            </div>
+        </div>
+        
+       
+          {/* <!-- Grid row --> */}
+
+      </div>
+        {/* <!-- Footer Links --> */}
+
+
+
+
+
+{/* Social Media */}
+
+
+
+<div class="">
+
+    {/* <!-- Social buttons --> */}
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mr-1">
+          <i class="fab fa-facebook-f"> </i>
         </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mr-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mr-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mr-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mr-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    {/* <!-- Social buttons --> */}
 
-      {/* <!-- Twitter --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark">
-          <i class="fab fa-twitter"></i ></a>
-
-      {/* <!-- Google --> */} 
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-google"></i></a>
-
-      {/* <!-- Instagram --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-instagram"></i></a>
-
-      {/* <!-- Linkedin --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-linkedin"></i></a>
-      {/* <!-- Github --> */}
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-github"></i></a>
-    </section>
-    {/* <!-- Section: Social media --> */}
   </div>
-  {/* <!-- Grid container --> */}
 
-  {/* <!-- Copyright --> */}
-  <div class="text-center text-dark p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
-    © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  {/* <!-- Copyright --> */}
-</footer>
+{/* END */}
+
+
+      {/* <!-- Copyright --> */}
+      <div class="footer-copyright text-center py-3 justify-content-center" style={{backgroundColor:"white",textAlign:"center",color:"black"}}>
+        © 2021 Copyright: Made With Love ❤️ by Team {' '} <b>Forever Knights</b> 
         </div>
-        </div>
-    )
+
+    </footer>
+   
+      </div>
+  )
 }

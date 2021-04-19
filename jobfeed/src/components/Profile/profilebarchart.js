@@ -24,22 +24,27 @@ export default class Example extends PureComponent {
 
   render() {
     const arr=this.props.info;
+    console.log(arr);
    var arrfinal = [];
    var date = arr[arr.length-1].date;
    var ct = 0;
     for(let i=arr.length-1;i>=0;i--)
     {
       //console.log(arr[i].date === date);
-        if(arr[i].date === date)
+    
+        if(arr[i].date == date)
         {
+          console.log(ct,' Line NO 35');
           ct++;
         }
         else{
-          
+          console.log(ct);
+          console.log(40);
           arrfinal.push({"name":arr[i+1].date,"videoWatched":ct});
+          date=arr[i].date;
           ct = 1;
         }
-        if(i == 0)
+         if(i == 0)
         {
           arrfinal.push({"name":arr[0].date,"videoWatched":ct});
         }
@@ -47,8 +52,9 @@ export default class Example extends PureComponent {
     }
     console.log(arrfinal);
     var t = arrfinal.slice(0,7);
+    var p = arrfinal.reverse();
     console.log(t);
-    data = t;
+    data = p;
     console.log(data);
     return (
       <ResponsiveContainer width="100%" height="100%">

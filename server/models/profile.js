@@ -5,21 +5,25 @@ const profileSchema = new mongoose.Schema({
     userName: {
         type: String,
         //required: true,
+        default:"",
      },
     image: {
-        type:String
+        type:String,
+        default:"",
 
     },
     addcount: {
         type: Number,
+        default:0,
     },
     credits: {
         type: Number,
         default:0
     },
     Interests: {
-        type: String,
-        required: true
+        type: [],
+        required: true,
+        
     },
     Email: {
         type: String,

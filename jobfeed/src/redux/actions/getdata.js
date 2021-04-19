@@ -7,9 +7,24 @@ import { Redirect } from "react-router-dom";
 
 
 export const getalladds=()=>dispatch=>{
+    //const profile = useSelector
     // console.log(userData);
+   
+    var inter = localStorage.getItem('Interests');
+    console.log(inter);
+    if(inter==null)
+    {
+        history.push('/profile')
+    }
+    else
+    {
+    inter = inter.split(",")
+    }
+    console.log(inter)
+    // inter.split(',')
+
     console.log("HELLO");
-    axios.post("http://localhost:5000/adds",{"interest":"song"})
+    axios.post("http://localhost:5000/adds",{"interest":inter})
     .then((res)=>{
         console.log(res);
         dispatch({

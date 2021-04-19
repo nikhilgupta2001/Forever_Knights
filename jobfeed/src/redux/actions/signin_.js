@@ -5,6 +5,8 @@ import { GET_ERRORS, SET_CURRENT_USER, SIGNED_IN } from "../constants";
 import * as actionTypes from '../constants';
 import { Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; 
+toast.configure()
 
 export const registeruser = (userData) => {
     return dispatch => {
@@ -35,19 +37,20 @@ export const loginUser = userData => {
         axios.post('http://localhost:5000/signin', userData)
             .then(res => {
                 const usertype = res.data.usertype
+                console.log(res);
                 if(usertype=='User')
                 {
-                    const email = res.data.response.Email;
-                    const imageurl = res.data.response.ImageUrl;
-                    const Interests = res.data.response.Interests;
-                    const userName = res.data.response.userName;
+                    const email = res.data.email;
+                    // const imageurl = res.data.response.ImageUrl;
+                    // const Interests = res.data.response.Interests;
+                    const userName = res.data.userName;
                     const token = res.data.token;
                     const userid=res.data.id;
                     const usertype = res.data.usertype
                     localStorage.setItem('jwtToken', token);
                     localStorage.setItem('email', email);
-                    localStorage.setItem('imageurl', imageurl);
-                    localStorage.setItem('Interests', Interests);
+                    // localStorage.setItem('imageurl', imageurl);
+                    // localStorage.setItem('Interests', Interests);
                     localStorage.setItem('userName', userName)
                     localStorage.setItem('usertype', usertype)
                     localStorage.setItem('id',userid)
@@ -70,11 +73,21 @@ export const loginUser = userData => {
                     type: SIGNED_IN,
                     payload: res
                 });
-                history.push('/home');
+                if(usertype=='Company')
+                {
+                    history.push('/home');
+                }
+                else
+                {
+                history.push('/profile');
+                }
                 window.location.reload(true);
+                toast.success("Logged in successfully")
 
             })
-            .catch(err => toast("problem in login")
+            .catch((err) => {console.log(err); 
+                toast(err)
+            }
             )
     }
 }

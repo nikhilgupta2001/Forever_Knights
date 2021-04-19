@@ -2,6 +2,9 @@ import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import NavBar from '../../components/home/Navbar'
+import Spinner from './Spinner';
+import { toast } from "react-toastify";
+import '../companyprofile.css';
 const CompanyUploadVideo = (history) => {
     // https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg
     const [ImageUrl, setImageUrl] = useState("https://d30y9cdsu7xlg0.cloudfront.net/png/140281-200.png");
@@ -11,6 +14,7 @@ const CompanyUploadVideo = (history) => {
     const [writeup, setWriteup] = useState("")
     const [category, setCategory] = useState("")
     const [requiredviews,setrequiredviews] = useState("")
+    const [delayspinner,setdelaySpinner]=useState(false)
     useEffect(() => {
         // console.log(ImageUrl);
         // console.log(VideoUrl);
@@ -26,13 +30,26 @@ const CompanyUploadVideo = (history) => {
             }
             console.log(personData);
             axios.post('http://localhost:5000/companyProfile/savevideo', personData)
-                .then(res => { console.log(res)})
+                .then((res) => {
+
+                    console.log(res);
+
+                    if(res.data.err == null)
+                    {
+                        toast.success("Video saved successfully");
+                    }
+                    else{
+                     console.log(res)
+                     toast.error("Video already exist ")
+                    }
+                    })
                 .catch(err => { console.log(err) }
                 );
         }
     }, [ImageUrl, VideoUrl])
     const postDetails = (e) => {
         e.preventDefault();
+        setdelaySpinner(true)
         const data = new FormData()
         data.append("file", image)
         data.append("upload_preset", "Adds_Upload")
@@ -60,6 +77,7 @@ const CompanyUploadVideo = (history) => {
         })
         .then(res => res.json()) 
             .then(viddata => {
+                setdelaySpinner(false);
                 console.log(viddata)
                 setVideoUrl(viddata.url)
             })
@@ -68,7 +86,7 @@ const CompanyUploadVideo = (history) => {
             })
     }
     return (
-        <div >
+        <div className="companyuploadfont">
             <NavBar/>
             <div class="jumbotron container-fluid jumbotron-fluid" style={{ backgroundColor: "#f8f5f1" }}>
                 <div className="row">
@@ -111,14 +129,17 @@ const CompanyUploadVideo = (history) => {
                         </video>
                     </div>
                     :<div className="border shadow-lg"style={{height:"300px",width:"100%"}}>
-
+                        {/* <Spinner/> */}
+                        {
+                            delayspinner ? <div style={{maxHeight:"50px",maxWidth:"50px"}}><Spinner/> </div>: <div></div>
+                        }
                     </div>}
 
 
                     <div class="file-field input-field">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" onChange={(e) => setVideo(e.target.files[0])} />
+                            <input type="file" onChange={(e) => {setVideo(e.target.files[0])}} />
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" />

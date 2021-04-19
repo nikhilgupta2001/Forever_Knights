@@ -11,3 +11,19 @@
 /* .shadowNew {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } */
+
+.transitions-item {
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 5em;
+    font-weight: 800;
+    text-transform: uppercase;
+    will-change: transform, opacity, height;
+    white-space: nowrap;
+    cursor: pointer;
+    line-height: 80px;
+  }

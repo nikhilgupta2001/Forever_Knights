@@ -9,6 +9,9 @@ import { Modal, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { Parallax, Background } from "react-parallax";
 import Spinner from './Spinner';
+import history from '../redux/actions/history';
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const Adds = () => {
     var t = false;
     const dispatch = useDispatch();
@@ -16,13 +19,32 @@ const Adds = () => {
     var arr = [];
 
     const [modalShow, setModalShow] = useState(false);
+
     const [url, seturl] = useState("");
+
+    console.log(localStorage.getItem('Interests'))
+    if (localStorage.getItem('Interests') == null) {
+        console.log("Line 28")
+        history.push('/profile');
+        toast.error("You have no interest present in profile kindly add interests to watch adds");
+
+    }
+    else if (localStorage.getItem('Interests') == "undefined") {
+        console.log("line 26")
+        history.push('/profile');
+        setTimeout(() => { window.location.reload(true) }, 5000);
+        toast.error("Please fill your interest");
+    }
+    // const [loading,setloading]=useState(true);
+    // const profile = useSelector(state=>state);
+    // console.log(profile);
 
     function modalCall(e) {
         console.log(e);
         setModalShow(true);
         seturl(e);
     }
+
     //const [video, setVideo] = useState("");
     const getAdds = useSelector(state => state.getAdds.adds);
     const loading = useSelector(state => state.getAdds.loading)
@@ -34,17 +56,19 @@ const Adds = () => {
     return (
         <div>
             <NavBar />
-            <Parallax bgImage={image1} strength={100}>
-                <div >
+            <Parallax bgImage={image1} strength={100} style={{ height: "100%" }}>
+                <div>
 
                     <div className="row" style={{ justifyContent: "center" }}>
                         {
                             loading ? (
-                                <Spinner />
+                                <div className="justify-content-center" style={{marginTop:"8rem",marginBottom:"3rem"}}>
+                                    <Spinner />
+                                </div>
                             ) : (getAdds[0].map((e) => {
                                 console.log(e);
                                 return (
-                                    <div className=" col-md-5 col-sm-12 card m-2" style={{ backgroundColor: "#ffd3b4" }}>
+                                    <div className=" col-md-5 col-sm-12 card m-2" style={{ backgroundColor: "linear-gradient(#fb3640, #ff8303, #8ab6d6)" }}>
                                         <div className="card-image m-1"  >
                                             <img src={e.thumbnailurl} onClick={() => modalCall(e)} />
                                         </div>
@@ -60,12 +84,12 @@ const Adds = () => {
                     </div>
                 </div>
             </Parallax>
-                {/* {console.log(e)} */}
-                <MyVerticallyCenteredModal
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                    e={url}
-                />
+            {/* {console.log(e)} */}
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                e={url}
+            />
         </div>
     )
 }

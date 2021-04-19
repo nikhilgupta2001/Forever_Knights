@@ -3,23 +3,31 @@ import { Link } from 'react-router-dom';
 import NavBar from './home/Navbar';
 import './profile.css';
 import { useDispatch, useSelector } from 'react-redux'
-import TagsInput from 'react-tagsinput'
 import axios from 'axios';
 import Profilenav from './Profile/Profilenav';
 import Spinner from './Spinner';
 import { getprofile } from '../redux/actions/getprofile';
+import Footer from './home/Footer';
+import 'react-tagsinput/react-tagsinput.css'
+import Autosuggest from 'react-autosuggest';
+import TagsInput from './Tagsinput';
+
+// import { WithContext as ReactTags } from 'react-tag-input';
 
 const Profile = (history) => {
+    var arr = [];
     const [edit, setEdit] = useState("false")
     //var edit = "false";
     const dispatch = useDispatch();
     const loading = useSelector(state => state.getProfile.loading);
-    const data=useSelector(state=>state.getProfile.profile.data)
-    
+    const data = useSelector(state => state.getProfile.profile.data)
+
     // const userName=window.localStorage.getItem('userName');
     //         console.log(userName);
-
+    const name = localStorage.getItem('userName');
+    const email = localStorage.getItem('email')
     useEffect(() => {
+        console.log(Interests);
 
         const userName = window.localStorage.getItem('userName');
         console.log(userName);
@@ -27,12 +35,32 @@ const Profile = (history) => {
         dispatch(getprofile(userName));
 
     }, [dispatch])
+
+     
+    
     const [image, setImage] = useState("");
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [Interests, setInterests] = useState("");
+    
+    // const [name, setName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const handleChange=() =>{
+    //     console.log(tags,'42')
+    //     setTags(tags)
+    //   }
+
+    const [Interests, setInterests] = useState([]);
+    
+    
     const [ImageUrl, setImageUrl] = useState("https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg");
+    
     const postDetails = (e) => {
+
+        // if(!(window.event && window.event.keyCode == 13)){
+            
+        // }
+        localStorage.setItem('Interests', Interests)
+        // window.localStorage.setItem(arr);
+        console.log(e);
+        console.log(image)
         e.preventDefault();
         const data = new FormData()
         data.append("file", image)
@@ -47,6 +75,7 @@ const Profile = (history) => {
                 console.log(data);
                 setImageUrl(data.secure_url);
                 // set profile
+
                 const personData = {
                     name,
                     email,
@@ -62,28 +91,27 @@ const Profile = (history) => {
             .catch(err => {
                 console.log(err);
             })
-        }
-
-        //
-    const editDetails = (e) => {
-
-        e.preventDefault();
-        setEdit("true");
     }
 
-    const onsaveChange = (e) => {
+    //
+    
+    const selectedTags = tags => {
+		console.log(tags);
+        
+        arr.push(tags)
+        setInterests(arr)
+	};
 
-        e.preventDefault();
+    console.log(Interests,"line 99")
 
-    }
     return (
-           <div>
+        <div>
             { loading ? (
-                <Spinner />   
+                <Spinner />
             ) : (
                 <div className="" style={{}}>
                     <NavBar />
-                    <div className="row" style={{backgroundColor:"#"}}>
+                    <div className="row" style={{ backgroundColor: "#" }}>
                         <div className="col-md-3" >
                             <Profilenav />
                         </div>
@@ -94,40 +122,21 @@ const Profile = (history) => {
                                 <div className="row">
 
                                     <div className="col-md-4 " style={{ padding: "4px" }}>
+
                                         <div className="card" style={{}}>
                                             {console.log(ImageUrl)}
                                             <img className="card-img-top" src={ImageUrl} />
-                                            {ImageUrl == "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
-                                                ? <span style={{ textAlign: "center" }} className="fontA">Upload Image</span> : <span></span>}
-
-                                            {ImageUrl == "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" ?
-                                                <div>
-                                                    <div class="file-field input-field">
-                                                        <div class="btn">
-                                                            <span>File</span>
-                                                            <input type="file" />
-                                                        </div>
-                                                        <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" />
-                                                        </div>
+                                            <div>
+                                                <div class="file-field input-field">
+                                                    <div class="btn">
+                                                        <span>File</span>
+                                                        <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                                                     </div>
-
-
-                                                </div> :
-                                                <div>
-                                                    {edit == "false" ?
-                                                        <div>
-                                                            <button onClick={editDetails => {
-                                                                setEdit("false")
-                                                            }} type="submit" className="btn btn-primary">Edit Image</button>
-                                                        </div> :
-                                                        <div>
-                                                            <div> <input type="file" onChange={(e) => setImage(e.target.files[0])} /></div>
-                                                        </div>
-                                                    }
-                                                </div>}
-
-
+                                                    <div class="file-path-wrapper">
+                                                        <input class="file-path validate" type="text" />
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div className="card-body">
                                                 <p className="card-text"></p>
                                             </div>
@@ -138,53 +147,54 @@ const Profile = (history) => {
                                     <div className="col-md-8 ">
                                         <div className="row text-light">
                                             <div className="col-md-12">
-                                                <form>
+                                                <form onsubmit="return false">
                                                     <div className="mb-3">
-                                                    <label for="first_name">User Name</label>
+                                                        <label for="first_name">User Name</label>
                                                         <div class="input-field col s12">
-                                                       
-                                                            <input  onChange={e => setName(e.target.value)} id="first_name" type="text" class="validate" />
-                                                          
+
+                                                            <input value={name} id="first_name" type="text" class="validate" />
+
                                                         </div>
                                                         {/* <label for="exampleInputEmail1" className="form-label">UserName</label> */}
                                                         {/* <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  /> */}
                                                     </div>
                                                     <div className="mb-3">
-                                                    <label for="first_name">Email</label>
+                                                        <label for="first_name">Email</label>
                                                         <div class="input-field col s12">
-                                                        
-                                                            <input  onChange={e => setEmail(e.target.value)} id="first_name" type="text" class="validate"/>
-                                                            
+
+                                                            <input value={email} id="first_name" type="text" class="validate" />
+
                                                         </div>
 
                                                         {/* <label for="exampleInputEmail1" className="form-label">Email</label>
                                                 <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={e => setEmail(e.target.value)} /> */}
                                                     </div>
-                                                    <div className="mb-3">
-                                                    <label for="first_name">Interests</label>
+                                                    <div className="mb-3 text-dark">
+                                                        <label for="first_name">Interests</label>
 
-                                                        <div class="input-field col s12">
-                                                            <input  onChange={e => setInterests(e.target.value)} id="first_name" type="text" class="validate"/>
+                                                        {/* <div class="input-field col s12">
+                                                            <input onChange={e => setInterests(e.target.value)} id="first_name" type="text" class="validate" />
+                                                        </div> */}
+                                                          <TagsInput selectedTags={selectedTags}  tags={[]}/>
+                                                          {/* <input type="text"/> */}
                                                      
-                                                        </div>
-
-
+                                                           
                                                         {/* <label for="exampleInputEmail1" className="form-label">Interests</label>
                                                 <input type="text" data-role="tagsinput" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={e => setInterests(e.target.value)} /> */}
                                                     </div>
-                                                    <div className="mb-3">
+                                                    {/* <div className="mb-3">
 
                                                         <div class="input-field col s12">
                                                             <input placeholder="Placeholder" onChange={e => setInterests(e.target.value)} id="first_name" type="text" class="validate" />
                                                             <label for="first_name"></label>
-                                                        </div>
+                                                        </div> */}
 
 
                                                         {/* <label for="exampleInputEmail1" className="form-label"></label>
                                                 <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" /> */}
-                                                    </div>
-                                                    <button onClick={postDetails} type="submit" className="btn btn-primary">Save Changes</button>
+                                                    {/* </div> */}
                                                 </form>
+                                                <button onClick={postDetails}  className="btn btn-primary">Save Changes</button>
                                             </div>
                                         </div>
                                     </div>
@@ -195,8 +205,9 @@ const Profile = (history) => {
                     </div>
                 </div>
             )
-        }
-            </div> 
+            }
+            <Footer />
+        </div>
     )
 
 }
