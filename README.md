@@ -180,7 +180,7 @@ It is very easy to use our project if anyone wants. Just follow the steps :
     "video-react": "^0.14.1",
     "web-vitals": "^1.1.1"
   },
-   `` 
+   ```
       
 
 5. After successful installation run the following command to start the application :
