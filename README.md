@@ -1,4 +1,4 @@
-### AddsTube
+### :star2: AddsTube 
 
  
 
@@ -26,7 +26,7 @@ Maps feature has been added for easy navigation to shops.
 When you’re a marketing professional, it’s expected that you’ll constantly be generating innovative ideas for showcasing your brand to the world. While problem solving is at the core of what you do, even the most imaginative person needs a little inspiration from time to time.So here we are presenting our product where branding and addvertisement will not be a crap for users.Instead they will come here to incash their leisure time.On the other hand companies will reach directly to  millions of people.not  by disturbing them when they are working. but when they are happy to watch the adds.
 
 
-## ✨Screen shots of website
+## :sparkles:Screen shots of website
    1. ![](jobfeed/public/Images/readme1.png)
    
    2. ![](jobfeed/public/Images/readme2.png)
@@ -218,7 +218,7 @@ and live share.
 
 
 
-## Contribute
+## :sparkles:Contribute
  Although we have tried our best to make our application robust and secure, errors might have crept in. If you have any ideas, just [open an issue](https://github.com/nikhilgupta2001/Forever_Knights) and tell us what you think.
 
 If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
@@ -233,7 +233,7 @@ If you'd like to contribute, please fork the repository and make changes as you'
 
 
 
-## Credits
+## :sparkles:Credits
    * Special thanks to Mr Smith Patel fro guiding us throughout the project . Helping us through our doubts and ideological conflicts. 
 
 
@@ -248,4 +248,4 @@ If you'd like to contribute, please fork the repository and make changes as you'
    </div>
 
 
-## ✨Developed by : ForeverKnights
+## :triangular_flag_on_post: Developed by : ⚡️ForeverKnights⚡️
