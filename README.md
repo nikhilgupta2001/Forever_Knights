@@ -96,7 +96,7 @@ The following tools were used in building this site
  
 * **AddsTube:company(POV)**
   * A wide range of audience for your product
-  * A well tailored UI to match ur needs
+  * A well tailored UI to match your needs
   * Extremely simple to add advertisement.
   * Easy maintenance of adds data 
   * Easy to check the viewership of an add
@@ -105,7 +105,7 @@ The following tools were used in building this site
  
 
 * Authentication
-  * Secure Authentication features implemented with passport.js
+  * Secure Authentication features implemented with JWT
   * No two usernames can be same.
   * No two adds/users/company can have same ids
   * User cannot use the features of our site without being logged in.
@@ -205,20 +205,19 @@ It is very easy to use our project if anyone wants. Just follow the steps :
 
 ## ✨Challenges we ran into
 
-1. **Finding a unique/novel idea:** Finding a novel and innovative idea for a hackathon as allways been a tough job . Developing an idea into a project is the next hell . We made our way through brain storming hrs to land were we are right now.accept
+1. **Finding a unique/novel idea:** Finding a novel and innovative idea for a hackathon has always been a tough job . Developing an idea into a project is the next hell . We made our way through brain storming hours to land where we are right now.
 
-2. **Choosing the right library:** There are huge number of libraries for any job to get done . Finding the one suitable to your coding style and motive is a difficult task . We went through some awesome libraries to figure out what is best for the application on the basis of performance and being robust.
+2. **Choosing the right library:** There are huge number of libraries to get any job done . Finding the one suitable to your coding style and motive is a difficult task . We went through some awesome libraries to figure out what is best for the application on the basis of performance and being robust.
 
 3. **Tricky State Management:**  Managing state throughout a huge application considering the local state , global state and function calls has been a challenge. We invested a huge amount of time figuring out how to make it work properly and efficiently.
 
 
 
-4. **Interchange of data in MongoDB :**  Interchanging data through the UI and database simultaneously for the user as well as for the company at the same time . We ran into a call back hell and dealt it with some new methods to tackle the same.
+4. **Interchange of data in MongoDB :**  Interchanging data through the UI and database simultaneously for the user as well as for the company at the same time was a difficult task. We ran into a call back hell and dealt it with some new methods to tackle the same.
 
-5. **Using authentication feature :** This was one of the most important features of our adds project. We had to ensure no two users can have same username, each profile is identified by a unique id, users cannot see adds without logging in and so on.  For this we used  jwt token which provides simple, unobtrusive authentication for Node.js. Also its great documentation helped us incorporate it properly in our project.
+5. **Using authentication feature :** This was one of the most important features of our adds project. We had to ensure no two users can have same username, each profile is identified by a unique id, users cannot see adds without logging in and so on.  For this we used  jwt token which provides simple, unobstructive authentication for Node.js. 
 
-7. **Non-availability of members at one location :** Due to current Covid-19 crisis our team was working on this project from three different locations. This was quite difficult in many occasions but still we coordinated well with each other. We were constantly in touch with each other over phone and updated the developments of our project on GitHub.
-and live share.
+7. **Non-availability of members at one location :** Due to current Covid-19 crisis our team was working on this project from three different locations. This was quite difficult in many occasions but still we coordinated well with each other. We were constantly in touch with each other over phone and updated the developments of our project on GitHub via  live share.
 
 
 
@@ -228,9 +227,9 @@ and live share.
 If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
 
   1. Fork it (https://github.com/nikhilgupta2001/Forever_Knights)
-  2. Create your own branch (git checkout -b views/newPages)
+  2. Create your own branch (git checkout -b views/issue)
   3. Commit your changes (git commit -am 'Added new auth feature')
-  4. Push to the branch (git push origin views/newPages)
+  4. Push to the branch (git push origin views/issue)
   5. Create a new Pull Request
 
 
@@ -247,7 +246,6 @@ If you'd like to contribute, please fork the repository and make changes as you'
     💻 <a href="https://github.com/mrSidSa">Siddhesh Sathe</a><br/>
     💻 <a href="https://github.com/nikhilgupta2001">Nikhil Gupta</a><br/>
     💻 <a href="https://github.com/SARVESHKHANDELWAL">Sarvesh Khandelwal</a><br/>
-   
    <p> 
    </div>
 
