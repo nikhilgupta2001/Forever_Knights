@@ -39,7 +39,7 @@ When you’re a marketing professional, it’s expected that you’ll constantly
     
    4  <b>User Side Page for watching adds of the interest selected by user</b><br /><br />![](jobfeed/public/Images/readme4.png)
    
-   5. <b>Modal opened when user starts watching add.Hw will not able to skip and credit will only be added when add is fully watched</b><br /><br />![](jobfeed/public/Images/readme5.png)
+   5. <b>Modal opened when user starts watching add.They will not be able to skip add. and credit will only be added when add is fully watched</b><br /><br />![](jobfeed/public/Images/readme5.png)
     
    6. <b>Company side adds analysis page which includes adds stats and their views.</b><br /><br />![](jobfeed/public/Images/readme6.png)
     
