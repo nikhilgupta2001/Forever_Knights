@@ -27,19 +27,19 @@ When you’re a marketing professional, it’s expected that you’ll constantly
 
 
 ## :sparkles:Screen shots of website
-   1. ![](jobfeed/public/Images/readme1.png)
+   1. <b>Landing Page  of website</b><br /><br />![](jobfeed/public/Images/readme1.png)
    
-   2. ![](jobfeed/public/Images/readme2.png)
+   2. <b>Edit Profile Page of User/Client</b><br /><br />![](jobfeed/public/Images/readme2.png)
     
-   3. ![](jobfeed/public/Images/readme3.png)
+   3. <b>Stats of User which includes last 7 date wise adds watched and credits earned.</b><br /><br />![](jobfeed/public/Images/readme3.png)
     
-   4 ![](jobfeed/public/Images/readme4.png)
+   4  <b>User Side Page for watching adds of the interest selected by user</b><br /><br />![](jobfeed/public/Images/readme4.png)
    
-   5. ![](jobfeed/public/Images/readme5.png)
+   5. <b>Modal opened when user starts watching add.Hw will not able to skip and credit will only be added when add is fully watched</b><br /><br />![](jobfeed/public/Images/readme5.png)
     
-   6. ![](jobfeed/public/Images/readme6.png)
+   6. <b>Company side adds analysis page which includes adds stats and their views.</b><br /><br />![](jobfeed/public/Images/readme6.png)
     
-   7. ![](jobfeed/public/Images/readme7.png)
+   7. <b>Adds analysis via charts on company side</b><br /><br />![](jobfeed/public/Images/readme7.png)
 
 
 
