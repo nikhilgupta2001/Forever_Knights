@@ -22,11 +22,11 @@ Maps feature has been added for easy navigation to shops.
 
 
 
-## Motivation
+## ✨Motivation
 When you’re a marketing professional, it’s expected that you’ll constantly be generating innovative ideas for showcasing your brand to the world. While problem solving is at the core of what you do, even the most imaginative person needs a little inspiration from time to time.So here we are presenting our product where branding and addvertisement will not be a crap for users.Instead they will come here to incash their leisure time.On the other hand companies will reach directly to  millions of people.not  by disturbing them when they are working. but when they are happy to watch the adds.
 
 
-## Screen shots of website
+## ✨Screen shots of website
    1. ![](jobfeed/public/Images/readme1.png)
    
    2. ![](jobfeed/public/Images/readme2.png)
@@ -43,7 +43,7 @@ When you’re a marketing professional, it’s expected that you’ll constantly
 
 
 
-## Tech/framework used
+## ✨Tech/framework used
 The following tools were used in building this site
 * Front-end development
   * HTML
@@ -79,7 +79,7 @@ The following tools were used in building this site
   * AOS
     
 
-## Features
+## ✨Features
 * **AddsTube:client(POV)**
   * Easy to use interface just a right balance of elegance and simplicity.
   * A novel idea which can change the way we look up to adds.
@@ -117,7 +117,7 @@ The following tools were used in building this site
 
 
 
-## Installation
+## ✨Installation
 It is very easy to use our project if anyone wants. Just follow the steps :
 
 1. Firstly if you are working locally then you need to install the following :
@@ -199,7 +199,7 @@ It is very easy to use our project if anyone wants. Just follow the steps :
 
 
 
-## Challenges we ran into
+## ✨Challenges we ran into
 
 1. **Finding a unique/novel idea:** Finding a novel and innovative idea for a hackathon as allways been a tough job . Developing an idea into a project is the next hell . We made our way through brain storming hrs to land were we are right now.accept
 
@@ -237,9 +237,15 @@ If you'd like to contribute, please fork the repository and make changes as you'
    * Special thanks to Mr Smith Patel fro guiding us throughout the project . Helping us through our doubts and ideological conflicts. 
 
 
-#### Developed by : ForeverKnights
-#### Siddhesh Sathe  -> (https://github.com/mrSidSat)
-#### Nikhil Gupta  -> (https://github.com/nikhilgupta2001)
-#### Sarvesh Khandelwala -> (https://github.com/SARVESHKHANDELWAL)
+## :triangular_flag_on_post: Contributors 
+  <div>   
+  <p>
+    💻 <a href="https://github.com/mrSidSa">Siddhesh Sathe</a><br/>
+    💻 <a href="https://github.com/nikhilgupta2001">Nikhil Gupta</a><br/>
+    💻 <a href="https://github.com/SARVESHKHANDELWAL">Sarvesh Khandelwal</a><br/>
+   
+   <p> 
+   </div>
 
 
+## ✨Developed by : ForeverKnights
