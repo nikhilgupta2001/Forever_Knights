@@ -18,7 +18,7 @@ The respective benefits for the company and clients are as follows ...
             3. Easy to withdraw fortune earned on weekly basis
             
 
-Maps feature has been added for easy navigation to shops.
+
 
 
 
@@ -234,7 +234,7 @@ If you'd like to contribute, please fork the repository and make changes as you'
 
 
 ## :sparkles:Credits
-   * Special thanks to Mr Smith Patel fro guiding us throughout the project . Helping us through our doubts and ideological conflicts. 
+   * Special thanks to  <a href="https://github.com/C2OO13">Smith Patel Sir</a> for guiding us throughout the project . Helping us through our doubts and ideological conflicts. 
 
 
 ## :triangular_flag_on_post: Contributors 
