@@ -12,14 +12,14 @@ AddsTube is a website built to encourage the prime motive of creating  a win  wi
 
 The respective benefits for the company and clients are as follows ...
    1. Company : 
-            1. Branding has never been so easy and efficient.
-            2. Fixed amout of complete views are delivered promising further engagement by the user.
-            3. Far reaching audience ranging over all the target audience expected.
-            4. Easy to get reach to audience and get our youtube channels,companies to reach to the end user. 
+            1. Branding has never been so easy and efficient.<br />
+            2. Fixed amout of complete views are delivered promising further engagement by the user. <br />
+            3. Far reaching audience ranging over all the target audience expected.<br />
+            4. Easy to get reach to audience and get our youtube channels,companies to reach to the end user. <br />
    2. User/Client: 
-            1. Easy way to earn fortune at the cost of your free time.
-            2. Easy to monitor the stats of viewerhip over last week
-            3. Easy to withdraw fortune earned on weekly basis
+            1. Easy way to earn fortune at the cost of your free time.<br />
+            2. Easy to monitor the stats of viewerhip over last week<br />
+            3. Easy to withdraw fortune earned on weekly basis<br />
             
 
 
