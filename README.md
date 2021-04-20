@@ -3,7 +3,7 @@
  
 
 
-AddsTube is a website with a true motive to encourage the prime motive of creating  a win  win situation for both the client and the user . Company has always been in search for a optimal solution for publicity of their products . Adds being an easy and efficient way for publicity has been the prime method of spreading the brand name and value . We the forever knights from the 'null void' are here to aid to this situation .   
+AddsTube is a website built to encourage the prime motive of creating  a win  win situation for both the client and the user . Company has always been in search for a optimal solution for publicity of their products . Adds being an easy and efficient way for publicity has been the prime method of spreading the brand name and value . We the forever knights from the 'null void' are here to aid to this situation .   
 
 
 The respective benefits for the company and clients are as follows ...
